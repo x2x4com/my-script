@@ -16,7 +16,7 @@ my (@services,$myproto,$myurl,$myip,$myport,$socket,$mylogopen,@socket_answer,$t
 
 my $mail = { server => 'mail.livebytouch.com',
 	  user => 'jacky.xu@livebytouch.com',
-	  pass => '123456',
+	  pass => '',
 	  to => 'arthur.wang@livebytouch.com,zhetao.su@livebytouch.com,hugo.lu@livebytouch.com',
 	  cc => 'jacky.xu@livebytouch.com',
 	  from => 'Jacky Xu' };

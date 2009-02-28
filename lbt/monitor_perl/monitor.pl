@@ -39,7 +39,7 @@ my $mail_send_to_cc = '';
 my $mail_from = 'Perl System Monitor';
 my $mail_server = 'mail.livebytouch.com';
 my $mail_user = 'jacky.xu@livebytouch.com';
-my $mail_pass = '123456';
+my $mail_pass = '';
 
 
 ## testing config ##
