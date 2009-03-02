@@ -16,7 +16,7 @@ use POSIX qw(strftime);
 
 my $mysql_dump = '/usr/bin/mysqldump';
 my $mysql_username = 'root';
-my $mysql_password = 'LBTmysql@2007!';
+my $mysql_password = '';
 my $my_tar = '/bin/tar';
 my $tomcat_home = '/data/tomcat';
 my $admin_base = '/usr/local/sysAdmin';
