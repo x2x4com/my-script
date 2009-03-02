@@ -1,0 +1,66 @@
+#!/usr/bin/perl
+
+
+use strict;
+use IO::Socket;
+
+
+
+my $service_name = "admin";
+my $communication_key = "admin";
+my $fail_command = 'ls -lrt';
+
+$fail_command .= ' 2>&1 ; echo exec_return=$?';
+
+
+
+
+my $new_salt;
+my $answer;
+my @answers;
+
+my $new_salt = sub { my $salt = join '', ('.', '/', 0..9, 'A'..'Z', 'a'..'z')[rand 64, rand 64]; return $salt; };
+#print $new_salt->() . "\n";
+$service_name = crypt ($service_name,$new_salt->());
+$communication_key = crypt ($communication_key,$new_salt->());
+
+my $target_ip = '192.168.1.1';
+my $target_port = '8888';
+
+#print "$service_name\n";
+#print "$communication_key\n";
+
+my $socket = IO::Socket::INET->new( PeerAddr => $target_ip,
+									PeerPort => $target_port,
+									Proto	 => 'tcp')
+				or die "Can't connect $target_ip:$target_port\n";
+
+#$socket->connect($target_ip,$target_port);
+chomp ($answer = <$socket>);
+#my $bs = length($answer);
+#print "$answer, byte = $bs\n";
+$socket->autoflush(1);
+if ( "$answer" eq "service_name:" ) {
+	print $socket "$service_name\n";
+	chomp ($answer = <$socket>);
+	if ( "$answer" eq "keys:" ) {
+    	print $socket "$communication_key\n";
+		chomp ($answer = <$socket>);
+		if ("$answer" eq "ok,go ahead") {
+			print $socket "$fail_command\n";
+			@answers = <$socket>;
+			print "@answers\n";
+			close $socket;
+		} else {
+			print "Bad Server response\n";
+			close $socket;
+		}
+	} else {
+		chomp ($answer = <$socket>);
+		print "$answer\n";
+		close $socket;
+	}
+} else {
+	print "Bad Server response\n";
+	close $socket;
+}

@@ -1,0 +1,16 @@
+####<2008-9-16 下午11时53分23秒 CST> <Error> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<WLS Kernel>> <> <BEA-101020> <[ServletContext(id=3483042,name=new,context-path=/new)] Servlet failed with Exception
+java.lang.NullPointerException
+	at jsp_servlet._order.__orderline_query._jspService(orderline_query.jsp:12)
+	at weblogic.servlet.jsp.JspBase.service(JspBase.java:33)
+	at weblogic.servlet.internal.ServletStubImpl$ServletInvocationAction.run(ServletStubImpl.java:1072)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:465)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:526)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:348)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:6981)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.invokeServlet(WebAppServletContext.java:3892)
+	at weblogic.servlet.internal.ServletRequestImpl.execute(ServletRequestImpl.java:2766)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:224)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:183)
+> > 

@@ -1,0 +1,40 @@
+####<2008-9-16 下午11时48分51秒 CST> <Notice> <WebLogicServer> <chunqiu.com> <Proxy> <ListenThread.Default> <<WLS Kernel>> <> <BEA-000355> <Thread "ListenThread.Default" listening on port 8888, ip address *.*> 
+####<2008-9-16 上午06时07分12秒 CST> <Critical> <Security> <finapp> <myserver> <ExecuteThread: '20' for queue: 'weblogic.kernel.Default'> <<WLS Kernel>> <> <BEA-090403> <Authentication for user admin denied>
+
+####<2008-9-16 下午02时11分28秒 CST> <Warning> <Common> <finapp> <myserver> <Thread-6> <<WLS Kernel>> <> <BEA-000620> <Forcibly releasing inactive resource "weblogic.jdbc.common.internal.ConnectionEnv@11a00af" back into the pool "HR Connection Pool".> 
+####<2008-9-16 下午02时37分55秒 CST> <Warning> <JDBC> <finapp> <myserver> <Finalizer> <<anonymous>> <> <BEA-001074> <A JDBC pool connection leak was detected. A connection leak occurs when a connection obtained from the pool was not closed explicitly by calling close() and then was disposed by the garbage collector and returned to the connection pool. The following stack trace at create shows where the leaked connection was created.  Stack trace at connection create:
+
+	at weblogic.jdbc.wrapper.PoolConnection.init(PoolConnection.java:75)
+	at weblogic.jdbc.pool.Driver.allocateConnection(Driver.java:254)
+	at weblogic.jdbc.pool.Driver.connect(Driver.java:164)
+	at weblogic.jdbc.jts.Driver.getNonTxConnection(Driver.java:546)
+	at weblogic.jdbc.jts.Driver.connect(Driver.java:140)
+	at weblogic.jdbc.common.internal.RmiDataSource.getConnection(RmiDataSource.java:344)
+	at com.sss.jdbc.dao.SvrDaoAbs.intConnection(SvrDaoAbs.java:56)
+	at com.sss.jdbc.dao.SvrDaoAbs.<init>(SvrDaoAbs.java:71)
+	at com.sss.jdbc.dao.OracleDataSupportImp.<init>(OracleDataSupportImp.java:26)
+	at com.sss.jdbc.dao.SvrDaoFactory.getSvrDaoInstance(SvrDaoFactory.java:26)
+	at com.sss.jdbc.dao.AbsOraDao.<init>(AbsOraDao.java:25)
+	at com.sss.ajax.actiondao.UserDao.<init>()V(Unknown Source)
+	at com.sss.ajax.action.LoginAjaxAction.dohandler(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)V(Unknown Source)
+	at com.sss.webcomponent.servlet.AjaxServlet.doGet(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)V(Unknown Source)
+	at com.sss.webcomponent.servlet.AjaxServlet.doPost(Ljavax.servlet.http.HttpServletRequest;Ljavax.servlet.http.HttpServletResponse;)V(Unknown Source)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:760)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+	at weblogic.servlet.internal.ServletStubImpl$ServletInvocationAction.run(ServletStubImpl.java:1077)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:370)
+	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:28)
+	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:27)
+	at com.sss.webcomponent.filter.SetCharacterEncodingFilter.doFilter(Ljavax.servlet.ServletRequest;Ljavax.servlet.ServletResponse;Ljavax.servlet.FilterChain;)V(Unknown Source)
+	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:27)
+	at com.sss.webcomponent.filter.ValidationFilter.doFilter(Ljavax.servlet.ServletRequest;Ljavax.servlet.ServletResponse;Ljavax.servlet.FilterChain;)V(Unknown Source)
+	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:27)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:7049)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.invokeServlet(WebAppServletContext.java:3902)
+	at weblogic.servlet.internal.ServletRequestImpl.execute(ServletRequestImpl.java:2773)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:224)
+> > 
+####<2008-9-16 下午02时59分37秒 CST> <Debug> <HTTP> <finapp> <myserver> <ExecuteThread: '2' for queue: 'weblogic.socket.Muxer'> <<WLS Kernel>> <> <BEA-101147> <HttpServer(29106743,null default ctx,myserver) Found no context for "/js/disablekey.js". This request does not match the context path for any installed Web applications, and there is no default Web application configured.> 
+

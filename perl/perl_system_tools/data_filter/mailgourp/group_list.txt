@@ -1,0 +1,17 @@
+#文档格式
+#[组名]
+#成员邮箱
+#成员邮箱
+# #号意思为注释，请不要随便去除
+
+#系统管理部门
+[sm]
+arthur.wang@livebytouch.com
+jacky.xu@livebytouch.com
+hugo.lu@livebytouch.com
+zhetao.su@livebytouch.com
+
+#其他部门请参考上面格式
+
+## Do not edit this ##
+[FINISH]

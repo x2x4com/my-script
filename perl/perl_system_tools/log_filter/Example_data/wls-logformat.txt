@@ -1,0 +1,103 @@
+####<2008-9-15 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param pageCheckSeconds initialized to: 1> 
+####<2008-9-15 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param pageCheckSeconds initialized to: 1> 
+####<2008-9-15 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param pageCheckSeconds initialized to: 1> 
+####<2008-9-16 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param pageCheckSeconds initialized to: 1> 
+####<2008-9-16 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param encoding initialized to: GBK> 
+####<2008-9-16 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param superclass initialized to weblogic.servlet.jsp.JspBase> 
+####<2008-9-16 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param srcCompiler initialized to weblogic.jspc> 
+####<2008-9-16 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: param workingDir initialized to: /product/weblogic/bea/user_projects/domains/mydomain/NodeB/.wlnotdelete/extract/NodeB_Default_Default> 
+####<2008-9-16 下午11时52分57秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] *.jsp: initialization complete> 
+####<2008-9-16 下午11时53分23秒 CST> <Error> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<WLS Kernel>> <> <BEA-101020> <[ServletContext(id=3483042,name=new,context-path=/new)] Servlet failed with Exception
+java.lang.NullPointerException
+	at jsp_servlet._order.__orderline_query._jspService(orderline_query.jsp:12)
+	at weblogic.servlet.jsp.JspBase.service(JspBase.java:33)
+	at weblogic.servlet.internal.ServletStubImpl$ServletInvocationAction.run(ServletStubImpl.java:1072)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:465)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:526)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:348)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:6981)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.invokeServlet(WebAppServletContext.java:3892)
+	at weblogic.servlet.internal.ServletRequestImpl.execute(ServletRequestImpl.java:2766)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:224)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:183)
+> > 
+####<2008-9-17 上午12时00分00秒 CST> <Info> <null> <unknown> <unknown> <ExecuteThread: '3' for queue: 'weblogic.kernel.System'> <null> <null> <000000> <LogRotation trigger for logfile ./NodeB/NodeB.log> 
+####<2008-9-17 上午12时16分08秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '35' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] /*: init> 
+####<2008-9-17 上午12时16分08秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '35' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] /*: Using standard I/O> 
+####<2008-9-17 上午12时25分51秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '35' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/__main_frame_2.java> 
+####<2008-9-17 上午01时06分41秒 CST> <Error> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<WLS Kernel>> <> <BEA-101020> <[ServletContext(id=3483042,name=new,context-path=/new)] Servlet failed with Exception
+java.lang.NullPointerException
+	at java.net.URLDecoder.decode(URLDecoder.java:118)
+	at java.net.URLDecoder.decode(URLDecoder.java:82)
+	at jsp_servlet.__main_23._jspService(main_23.jsp:9)
+	at weblogic.servlet.jsp.JspBase.service(JspBase.java:33)
+	at weblogic.servlet.internal.ServletStubImpl$ServletInvocationAction.run(ServletStubImpl.java:1072)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:465)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:348)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:6981)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.invokeServlet(WebAppServletContext.java:3892)
+	at weblogic.servlet.internal.ServletRequestImpl.execute(ServletRequestImpl.java:2766)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:224)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:183)
+> > 
+####<2008-9-17 上午02时18分32秒 CST> <Error> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<WLS Kernel>> <> <BEA-101020> <[ServletContext(id=3483042,name=new,context-path=/new)] Servlet failed with Exception
+java.lang.NullPointerException
+	at jsp_servlet._route.__route_base._jspService(route_base.jsp:17)
+	at weblogic.servlet.jsp.JspBase.service(JspBase.java:33)
+	at weblogic.servlet.internal.ServletStubImpl$ServletInvocationAction.run(ServletStubImpl.java:1072)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:465)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:526)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:348)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:6981)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.invokeServlet(WebAppServletContext.java:3892)
+	at weblogic.servlet.internal.ServletRequestImpl.execute(ServletRequestImpl.java:2766)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:224)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:183)
+> > 
+####<2008-9-17 上午05时35分50秒 CST> <Error> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<WLS Kernel>> <> <BEA-101020> <[ServletContext(id=3483042,name=new,context-path=/new)] Servlet failed with Exception
+java.lang.NullPointerException
+	at java.net.URLDecoder.decode(URLDecoder.java:118)
+	at java.net.URLDecoder.decode(URLDecoder.java:82)
+	at jsp_servlet.__main_23._jspService(main_23.jsp:9)
+	at weblogic.servlet.jsp.JspBase.service(JspBase.java:33)
+	at weblogic.servlet.internal.ServletStubImpl$ServletInvocationAction.run(ServletStubImpl.java:1072)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:465)
+	at weblogic.servlet.internal.ServletStubImpl.invokeServlet(ServletStubImpl.java:348)
+	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:6981)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:121)
+	at weblogic.servlet.internal.WebAppServletContext.invokeServlet(WebAppServletContext.java:3892)
+	at weblogic.servlet.internal.ServletRequestImpl.execute(ServletRequestImpl.java:2766)
+	at weblogic.kernel.ExecuteThread.execute(ExecuteThread.java:224)
+	at weblogic.kernel.ExecuteThread.run(ExecuteThread.java:183)
+> > 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: init> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param verbose initialized to: true> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param packagePrefix initialized to: jsp_servlet> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param compilerclass initialized to: com.sun.tools.javac.Main> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param compileCommand initialized to: javac> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param compilerval initialized to: com.sun.tools.javac.Main> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param pageCheckSeconds initialized to: 1> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param encoding initialized to: GBK> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param superclass initialized to weblogic.servlet.jsp.JspBase> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param srcCompiler initialized to weblogic.jspc> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: param workingDir initialized to: /product/weblogic/bea/user_projects/domains/mydomain/NodeB/.wlnotdelete/extract/NodeB_lht_lht> 
+####<2008-9-17 上午06时01分17秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] *.jsp: initialization complete> 
+####<2008-9-17 上午07时49分44秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] syslogin: init> 
+####<2008-9-17 上午07时54分30秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/_sale/__limit_query_byday.java> 
+####<2008-9-17 上午08时04分01秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/_sale/__limit_query_byroute.java> 
+####<2008-9-17 上午08时05分26秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '36' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/_sale/__limit_query_bymonth.java> 
+####<2008-9-17 上午08时09分08秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '3' for queue: 'weblogic.kernel.System'> <<anonymous>> <> <BEA-101326> <The server could not send the HTTP message during the configured timeout value. 	The socket has been closed.> 
+####<2008-9-17 上午08时20分08秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '1' for queue: 'weblogic.kernel.System'> <<anonymous>> <> <BEA-101326> <The server could not send the HTTP message during the configured timeout value. 	The socket has been closed.> 
+####<2008-9-17 上午08时48分09秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '2' for queue: 'weblogic.kernel.System'> <<anonymous>> <> <BEA-101326> <The server could not send the HTTP message during the configured timeout value. 	The socket has been closed.> 
+####<2008-9-17 上午08时50分39秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '33' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/_huadong/_route/__route_query_branch.java> 
+####<2008-9-17 上午08时51分27秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '33' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/_huadong/_order/__order_sale.java> 
+####<2008-9-17 上午08时58分19秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=4131776,name=lht,context-path=/lht)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_lht_lht/jsp_servlet/_huadong/_order/__order_sale.java> 
+####<2008-9-17 上午08时58分43秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '37' for queue: 'weblogic.kernel.Default'> <<anonymous>> <> <BEA-101047> <[ServletContext(id=18521651,name=Default,context-path=)] Generated java file: /product/weblogic/bea/user_projects/domains/mydomain/./NodeB/.wlnotdelete/extract/NodeB_Default_Default/jsp_servlet/_report/__salestatistics.java> 
+####<2008-9-17 上午09时00分39秒 CST> <Info> <HTTP> <chunqiu.com> <NodeB> <ExecuteThread: '1' for queue: 'weblogic.kernel.System'> <<anonymous>> <> <BEA-101326> <The server could not send the HTTP message during the configured timeout value. 	The socket has been closed.> 

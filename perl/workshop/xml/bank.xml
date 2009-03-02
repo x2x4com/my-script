@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312" standalone="yes"?>
+<IbpsBankCodeConf>
+         <ibps code='009'>
+                   <ibpsName name='中国进出口银行' ECFlag='2' paySysBankCode='202100000003' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行北京分行' ECFlag='2' paySysBankCode='202100000011' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行成都分行' ECFlag='2' paySysBankCode='202651000019' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行大连分行' ECFlag='2' paySysBankCode='202222000017' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行湖南省分行' ECFlag='2' paySysBankCode='202551066660' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行南京分行' ECFlag='2' paySysBankCode='202301000015' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行青岛分行' ECFlag='2' paySysBankCode='202452000016' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行陕西省分行' ECFlag='2' paySysBankCode='202791000017' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行上海分行' ECFlag='2' paySysBankCode='202290000012' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行深圳分行' ECFlag='2' paySysBankCode='202584000018' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行浙江省分行' ECFlag='2' paySysBankCode='202331000016' eisBankCode='null' eisSiteCode='null' />
+                   <ibpsName name='中国进出口银行重庆分行' ECFlag='2' paySysBankCode='202653000014' eisBankCode='null' eisSiteCode='null' />
+         </ibps>

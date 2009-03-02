@@ -1,0 +1,415 @@
+2008-10-25 00:19:46,225 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 00:19:46,226 INFO [reg] - webname:zjl@81890.net
+2008-10-25 00:19:46,227 INFO [reg] - address:null
+2008-10-25 00:19:46,227 INFO [reg] - password:bg372s1BG372S1
+2008-10-25 00:19:46,227 INFO [reg] - mobile:null
+2008-10-25 00:19:46,227 INFO [reg] - answer:My name is Sun.
+2008-10-25 00:19:46,228 INFO [reg] - question:What is your name?
+2008-10-25 00:19:46,228 INFO [reg] - sex:0
+2008-10-25 00:19:46,228 INFO [reg] - username:周坚力
+2008-10-25 00:19:46,228 INFO [reg] - interset:[Ljava.lang.String;@6fcc7c50
+2008-10-25 00:19:46,228 INFO [reg] - receive reginfo data ok ...
+2008-10-25 00:19:46,229 INFO [reg] - begin to get userinfo ...
+2008-10-25 00:19:46,229 INFO [reg] - userinfo:116.232.199.70
+2008-10-25 00:19:46,229 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) )
+2008-10-25 00:19:46,229 INFO [reg] - userinfo:116.232.199.70|116.232.199.70|0|null|/registerDispose1.jsp
+2008-10-25 00:19:46,229 INFO [reg] - end   to get userinfo ...
+2008-10-25 00:19:46,393 DEBUG [reg] - new user is create success
+2008-10-25 00:19:46,396 INFO [reg] - end to receive reginfo data ...
+2008-10-25 08:18:08,376 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 08:18:08,384 INFO [reg] - webname:qiayima@hotmail.com
+2008-10-25 08:18:08,384 INFO [reg] - address:null
+2008-10-25 08:18:08,384 INFO [reg] - password:650828
+2008-10-25 08:18:08,384 INFO [reg] - mobile:null
+2008-10-25 08:18:08,385 INFO [reg] - answer:八位数
+2008-10-25 08:18:08,385 INFO [reg] - question:我的生日
+2008-10-25 08:18:08,385 INFO [reg] - sex:1
+2008-10-25 08:18:08,385 INFO [reg] - username:马恰怡
+2008-10-25 08:18:08,386 INFO [reg] - interset:[Ljava.lang.String;@4ffb06c9
+2008-10-25 08:18:08,386 INFO [reg] - receive reginfo data ok ...
+2008-10-25 08:18:08,386 INFO [reg] - begin to get userinfo ...
+2008-10-25 08:18:08,386 INFO [reg] - userinfo:58.37.205.118
+2008-10-25 08:18:08,387 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)
+2008-10-25 08:18:08,387 INFO [reg] - userinfo:58.37.205.118|58.37.205.118|0|null|/registerDispose1.jsp
+2008-10-25 08:18:08,387 INFO [reg] - end   to get userinfo ...
+2008-10-25 08:18:09,638 DEBUG [reg] - new user is create success
+2008-10-25 08:18:09,641 INFO [reg] - end to receive reginfo data ...
+2008-10-25 09:59:29,331 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 09:59:29,332 INFO [reg] - webname:gyanan316@163.com
+2008-10-25 09:59:29,333 INFO [reg] - address:null
+2008-10-25 09:59:29,333 INFO [reg] - password:832935
+2008-10-25 09:59:29,333 INFO [reg] - mobile:null
+2008-10-25 09:59:29,333 INFO [reg] - answer:99
+2008-10-25 09:59:29,333 INFO [reg] - question:我的网名
+2008-10-25 09:59:29,334 INFO [reg] - sex:1
+2008-10-25 09:59:29,334 INFO [reg] - username:勾亚男
+2008-10-25 09:59:29,334 INFO [reg] - interset:[Ljava.lang.String;@1b65d9bd
+2008-10-25 09:59:29,334 INFO [reg] - receive reginfo data ok ...
+2008-10-25 09:59:29,334 INFO [reg] - begin to get userinfo ...
+2008-10-25 09:59:29,335 INFO [reg] - userinfo:116.227.30.230
+2008-10-25 09:59:29,335 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2)
+2008-10-25 09:59:29,335 INFO [reg] - userinfo:116.227.30.230|116.227.30.230|0|null|/registerDispose1.jsp
+2008-10-25 09:59:29,335 INFO [reg] - end   to get userinfo ...
+2008-10-25 09:59:29,943 DEBUG [reg] - new user is create success
+2008-10-25 09:59:29,946 INFO [reg] - end to receive reginfo data ...
+2008-10-25 10:59:39,002 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 10:59:39,003 INFO [reg] - webname:llj_520@126.com
+2008-10-25 10:59:39,003 INFO [reg] - address:null
+2008-10-25 10:59:39,003 INFO [reg] - password:x6778451
+2008-10-25 10:59:39,004 INFO [reg] - mobile:null
+2008-10-25 10:59:39,004 INFO [reg] - answer:黄饱饱
+2008-10-25 10:59:39,004 INFO [reg] - question:我第一个狗狗的名字
+2008-10-25 10:59:39,004 INFO [reg] - sex:1
+2008-10-25 10:59:39,004 INFO [reg] - username:李雪
+2008-10-25 10:59:39,013 INFO [reg] - interset:[Ljava.lang.String;@56a1e78
+2008-10-25 10:59:39,013 INFO [reg] - receive reginfo data ok ...
+2008-10-25 10:59:39,013 INFO [reg] - begin to get userinfo ...
+2008-10-25 10:59:39,014 INFO [reg] - userinfo:61.170.205.187
+2008-10-25 10:59:39,014 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; TencentTraveler ; CIBA; .NET CLR 2.0.50727)
+2008-10-25 10:59:39,014 INFO [reg] - userinfo:61.170.205.187|61.170.205.187|0|null|/registerDispose1.jsp
+2008-10-25 10:59:39,014 INFO [reg] - end   to get userinfo ...
+2008-10-25 10:59:39,302 DEBUG [reg] - new user is create success
+2008-10-25 10:59:39,304 INFO [reg] - end to receive reginfo data ...
+2008-10-25 11:00:10,054 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 11:00:10,055 INFO [reg] - webname:annezheng@vip.citiz.net
+2008-10-25 11:00:10,055 INFO [reg] - address:null
+2008-10-25 11:00:10,055 INFO [reg] - password:wengjia
+2008-10-25 11:00:10,055 INFO [reg] - mobile:null
+2008-10-25 11:00:10,055 INFO [reg] - answer:wengjia
+2008-10-25 11:00:10,056 INFO [reg] - question:husband 
+2008-10-25 11:00:10,056 INFO [reg] - sex:1
+2008-10-25 11:00:10,056 INFO [reg] - username:zhengyunyan
+2008-10-25 11:00:10,056 INFO [reg] - interset:[Ljava.lang.String;@4ba0561d
+2008-10-25 11:00:10,056 INFO [reg] - receive reginfo data ok ...
+2008-10-25 11:00:10,057 INFO [reg] - begin to get userinfo ...
+2008-10-25 11:00:10,057 INFO [reg] - userinfo:58.38.120.56
+2008-10-25 11:00:10,057 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+2008-10-25 11:00:10,057 INFO [reg] - userinfo:58.38.120.56|58.38.120.56|0|null|/registerDispose1.jsp
+2008-10-25 11:00:10,058 INFO [reg] - end   to get userinfo ...
+2008-10-25 11:00:10,194 DEBUG [reg] - new user is create success
+2008-10-25 11:00:10,197 INFO [reg] - end to receive reginfo data ...
+2008-10-25 11:06:58,887 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 11:06:58,887 INFO [reg] - webname:sxa68@163.com
+2008-10-25 11:06:58,888 INFO [reg] - address:null
+2008-10-25 11:06:58,888 INFO [reg] - password:784477
+2008-10-25 11:06:58,888 INFO [reg] - mobile:null
+2008-10-25 11:06:58,888 INFO [reg] - answer:莉
+2008-10-25 11:06:58,888 INFO [reg] - question:我的名字是
+2008-10-25 11:06:58,889 INFO [reg] - sex:1
+2008-10-25 11:06:58,889 INFO [reg] - username:宋轩
+2008-10-25 11:06:58,889 INFO [reg] - interset:[Ljava.lang.String;@7534b191
+2008-10-25 11:06:58,889 INFO [reg] - receive reginfo data ok ...
+2008-10-25 11:06:58,890 INFO [reg] - begin to get userinfo ...
+2008-10-25 11:06:58,890 INFO [reg] - userinfo:58.246.237.167
+2008-10-25 11:06:58,890 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)
+2008-10-25 11:06:58,890 INFO [reg] - userinfo:58.246.237.167|58.246.237.167|0|null|/registerDispose1.jsp
+2008-10-25 11:06:58,890 INFO [reg] - end   to get userinfo ...
+2008-10-25 11:06:59,182 DEBUG [reg] - new user is create success
+2008-10-25 11:06:59,184 INFO [reg] - end to receive reginfo data ...
+2008-10-25 11:09:10,268 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 11:09:10,269 INFO [reg] - webname:xuelm1979@hotmail.com
+2008-10-25 11:09:10,269 INFO [reg] - address:null
+2008-10-25 11:09:10,270 INFO [reg] - password:790404
+2008-10-25 11:09:10,270 INFO [reg] - mobile:null
+2008-10-25 11:09:10,270 INFO [reg] - answer:清明
+2008-10-25 11:09:10,270 INFO [reg] - question:我的生日
+2008-10-25 11:09:10,270 INFO [reg] - sex:0
+2008-10-25 11:09:10,271 INFO [reg] - username:薛飞
+2008-10-25 11:09:10,271 INFO [reg] - interset:[Ljava.lang.String;@20579615
+2008-10-25 11:09:10,271 INFO [reg] - receive reginfo data ok ...
+2008-10-25 11:09:10,271 INFO [reg] - begin to get userinfo ...
+2008-10-25 11:09:10,272 INFO [reg] - userinfo:124.77.64.160
+2008-10-25 11:09:10,272 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)
+2008-10-25 11:09:10,272 INFO [reg] - userinfo:124.77.64.160|124.77.64.160|0|null|/registerDispose1.jsp
+2008-10-25 11:09:10,272 INFO [reg] - end   to get userinfo ...
+2008-10-25 11:09:10,405 DEBUG [reg] - new user is create success
+2008-10-25 11:09:10,408 INFO [reg] - end to receive reginfo data ...
+2008-10-25 11:29:01,413 INFO [reg] - begin to receive data ...
+2008-10-25 11:29:01,419 INFO [reg] - 签名数据:selserialNo=BDP5771&payNo=002101020001935&selpayType=指付通交易&selcorpId=100190005722166&corporname=上海点佰趣信息科技有限公司&selaccountNo=1001242719300351501&regDate= 20081025112803&HSURL=http://www.paybyfinger.com.cn/getICBCPayResult.jsp&merCertID= Livebytouch.y.1001&bankName=icbc&Area_code=1001&regCardNo =4580603485046944&userName=&receiveTime=20081025112803&sendTime=20081025112901&signState=1&TranErrorCode=7943&TranErrorMsg =Ö÷»ú´í
+2008-10-25 11:29:01,420 INFO [reg] - 加密数据:1kHyy0fjOsjSP/YKlEZgupHGkGjOjvFxGgLZHtPUJp8+QNYmHz5ndgkTUydr22pSOHreZkQToYSV61vn9krv0S4ro8jAJd6OVDhvdIVvHmg5Bl91wxzQsKd4LIeaEqVtfGmOkRzJo6cP97MViq+hD5tlXyEebyAvbBY0YxV0qGU=
+2008-10-25 11:29:01,422 INFO [reg] - 验证签名NC返回：<html><head><title>ÑéÇ©Ãû½á¹û</title><result>1</result></head><body><p>ÑéÇ©ÃûÊ§°Ü</p></body></html>
+2008-10-25 11:29:01,423 INFO [reg] - 验证签名失败
+2008-10-25 11:29:01,423 ERROR [reg] - verify fail
+2008-10-25 12:42:36,030 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 12:42:36,031 INFO [reg] - webname:bianfangjingcha@hotmail.com
+2008-10-25 12:42:36,031 INFO [reg] - address:null
+2008-10-25 12:42:36,032 INFO [reg] - password:a324609a
+2008-10-25 12:42:36,032 INFO [reg] - mobile:null
+2008-10-25 12:42:36,032 INFO [reg] - answer:是
+2008-10-25 12:42:36,032 INFO [reg] - question:我是佳佳的妈妈吗
+2008-10-25 12:42:36,032 INFO [reg] - sex:1
+2008-10-25 12:42:36,033 INFO [reg] - username:刘海娟
+2008-10-25 12:42:36,033 INFO [reg] - interset:[Ljava.lang.String;@3a26cb0f
+2008-10-25 12:42:36,033 INFO [reg] - receive reginfo data ok ...
+2008-10-25 12:42:36,033 INFO [reg] - begin to get userinfo ...
+2008-10-25 12:42:36,033 INFO [reg] - userinfo:58.41.212.123
+2008-10-25 12:42:36,034 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)
+2008-10-25 12:42:36,034 INFO [reg] - userinfo:58.41.212.123|58.41.212.123|0|null|/registerDispose1.jsp
+2008-10-25 12:42:36,034 INFO [reg] - end   to get userinfo ...
+2008-10-25 12:42:36,191 DEBUG [reg] - new user is create success
+2008-10-25 12:42:36,194 INFO [reg] - end to receive reginfo data ...
+2008-10-25 12:45:29,748 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 12:45:29,749 INFO [reg] - webname:331995875@qq.com
+2008-10-25 12:45:29,749 INFO [reg] - address:null
+2008-10-25 12:45:29,749 INFO [reg] - password:110731
+2008-10-25 12:45:29,749 INFO [reg] - mobile:null
+2008-10-25 12:45:29,749 INFO [reg] - answer:虾
+2008-10-25 12:45:29,750 INFO [reg] - question:我是谁
+2008-10-25 12:45:29,750 INFO [reg] - sex:0
+2008-10-25 12:45:29,750 INFO [reg] - username:蔡凯敏
+2008-10-25 12:45:29,750 INFO [reg] - interset:[Ljava.lang.String;@123b6177
+2008-10-25 12:45:29,750 INFO [reg] - receive reginfo data ok ...
+2008-10-25 12:45:29,751 INFO [reg] - begin to get userinfo ...
+2008-10-25 12:45:29,751 INFO [reg] - userinfo:220.205.30.102
+2008-10-25 12:45:29,751 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; QQDownload 1.7; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)
+2008-10-25 12:45:29,751 INFO [reg] - userinfo:220.205.30.102|220.205.30.102|0|null|/registerDispose1.jsp
+2008-10-25 12:45:29,751 INFO [reg] - end   to get userinfo ...
+2008-10-25 12:45:29,912 DEBUG [reg] - new user is create success
+2008-10-25 12:45:29,915 INFO [reg] - end to receive reginfo data ...
+2008-10-25 13:11:37,568 INFO [reg] - begin to receive data ...
+2008-10-25 13:11:37,569 INFO [reg] - 签名数据:selserialNo=BDP5771&payNo=002101020001937&selpayType=指付通交易&selcorpId=100190005722166&corporname=上海点佰趣信息科技有限公司&selaccountNo=1001242719300351501&regDate= 20081025130815&HSURL=http://www.paybyfinger.com.cn/getICBCPayResult.jsp&merCertID= Livebytouch.y.1001&bankName=icbc&Area_code=01001&regCardNo =9558801001164741636&userName=刘海娟&receiveTime=20081025130815&sendTime=20081025131137&signState=0&TranErrorCode=0&TranErrorMsg =
+2008-10-25 13:11:37,569 INFO [reg] - 加密数据:yibNGO4/jCjUiHlQj73I8fo1teTXH3oIRN5VGtdgPAEdeTrgs8Vdw2a31Eq/jHUvxps5EUG+K9J8BnC4A0E5X/zVMAgZOKLt6RuuLB9igy5xqy5H0RxQRq9Wssj0yn+xtu/cpsna4G4/h8qyzFNh1xqqRUSQLmH7sW6vdIhDgRU=
+2008-10-25 13:11:37,571 INFO [reg] - 验证签名NC返回：<html><head><title>ÑéÇ©Ãû½á¹û</title><result>1</result></head><body><p>ÑéÇ©ÃûÊ§°Ü</p></body></html>
+2008-10-25 13:11:37,572 INFO [reg] - 验证签名失败
+2008-10-25 13:11:37,572 ERROR [reg] - verify fail
+2008-10-25 13:11:37,599 INFO [reg] - not transfer
+2008-10-25 13:11:37,638 DEBUG [reg] - UPDATE FPSUSER SET STATUS='00',ACTIVEDATE=?,BANKACCOUNT=?,USERNAME=?,BANKAREACODE='0021',BANKCODE='0102' WHERE FPSUSER.STATUS = '02' and substrb(FPSUSER.USERCODE,1,15) = ?
+2008-10-25 13:11:37,642 INFO [reg] - update oracle:1
+2008-10-25 13:11:37,642 DEBUG [reg] - UPDATE usercodeinfo SET BINDSTATUS = '00',ACTIVEDATE= ?,ACTIVETIME=? WHERE BINDSTATUS = '03' AND substring(USERCODE,1,15) = ?
+2008-10-25 13:11:37,651 INFO [reg] - update mysql:1
+2008-10-25 13:11:37,661 INFO [reg] - close connection ok
+2008-10-25 13:11:37,661 INFO [reg] - 002101020001937开通委托代扣成功
+2008-10-25 13:22:08,541 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 13:22:08,542 INFO [reg] - webname:huangxiew_520@163.com
+2008-10-25 13:22:08,542 INFO [reg] - address:null
+2008-10-25 13:22:08,542 INFO [reg] - password:19870705
+2008-10-25 13:22:08,542 INFO [reg] - mobile:null
+2008-10-25 13:22:08,542 INFO [reg] - answer:甜甜
+2008-10-25 13:22:08,543 INFO [reg] - question:我的老婆名字是?
+2008-10-25 13:22:08,543 INFO [reg] - sex:0
+2008-10-25 13:22:08,543 INFO [reg] - username:黄谢午
+2008-10-25 13:22:08,543 INFO [reg] - interset:[Ljava.lang.String;@2cee5410
+2008-10-25 13:22:08,543 INFO [reg] - receive reginfo data ok ...
+2008-10-25 13:22:08,544 INFO [reg] - begin to get userinfo ...
+2008-10-25 13:22:08,544 INFO [reg] - userinfo:222.65.105.56
+2008-10-25 13:22:08,544 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; QQDownload 1.7)
+2008-10-25 13:22:08,544 INFO [reg] - userinfo:222.65.105.56|222.65.105.56|0|null|/registerDispose1.jsp
+2008-10-25 13:22:08,544 INFO [reg] - end   to get userinfo ...
+2008-10-25 13:22:08,712 DEBUG [reg] - new user is create success
+2008-10-25 13:22:08,715 INFO [reg] - end to receive reginfo data ...
+2008-10-25 13:22:44,701 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 13:22:44,702 INFO [reg] - webname:jojo22fish22@hotmail.com
+2008-10-25 13:22:44,702 INFO [reg] - address:null
+2008-10-25 13:22:44,702 INFO [reg] - password:jj5429494699
+2008-10-25 13:22:44,703 INFO [reg] - mobile:null
+2008-10-25 13:22:44,703 INFO [reg] - answer:熊方安
+2008-10-25 13:22:44,703 INFO [reg] - question:我婆婆的姓名？
+2008-10-25 13:22:44,703 INFO [reg] - sex:1
+2008-10-25 13:22:44,703 INFO [reg] - username:庄慧萍
+2008-10-25 13:22:44,704 INFO [reg] - interset:[Ljava.lang.String;@64874cc3
+2008-10-25 13:22:44,704 INFO [reg] - receive reginfo data ok ...
+2008-10-25 13:22:44,704 INFO [reg] - begin to get userinfo ...
+2008-10-25 13:22:44,704 INFO [reg] - userinfo:218.79.8.91
+2008-10-25 13:22:44,704 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; TencentTraveler ; .NET CLR 2.0.50727)
+2008-10-25 13:22:44,705 INFO [reg] - userinfo:218.79.8.91|218.79.8.91|0|null|/registerDispose1.jsp
+2008-10-25 13:22:44,705 INFO [reg] - end   to get userinfo ...
+2008-10-25 13:22:44,985 DEBUG [reg] - new user is create success
+2008-10-25 13:22:44,987 INFO [reg] - end to receive reginfo data ...
+2008-10-25 13:30:02,908 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 13:30:02,909 INFO [reg] - webname:nana8848@163.com
+2008-10-25 13:30:02,909 INFO [reg] - address:null
+2008-10-25 13:30:02,909 INFO [reg] - password:Li807279
+2008-10-25 13:30:02,909 INFO [reg] - mobile:null
+2008-10-25 13:30:02,909 INFO [reg] - answer:姓名
+2008-10-25 13:30:02,910 INFO [reg] - question:老公
+2008-10-25 13:30:02,910 INFO [reg] - sex:1
+2008-10-25 13:30:02,910 INFO [reg] - username:彭闽萱
+2008-10-25 13:30:02,910 INFO [reg] - interset:[Ljava.lang.String;@47f15427
+2008-10-25 13:30:02,911 INFO [reg] - receive reginfo data ok ...
+2008-10-25 13:30:02,911 INFO [reg] - begin to get userinfo ...
+2008-10-25 13:30:02,911 INFO [reg] - userinfo:61.170.205.231
+2008-10-25 13:30:02,911 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+2008-10-25 13:30:02,911 INFO [reg] - userinfo:61.170.205.231|61.170.205.231|0|null|/registerDispose1.jsp
+2008-10-25 13:30:02,912 INFO [reg] - end   to get userinfo ...
+2008-10-25 13:30:03,049 DEBUG [reg] - new user is create success
+2008-10-25 13:30:03,052 INFO [reg] - end to receive reginfo data ...
+2008-10-25 13:33:46,634 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 13:33:46,635 INFO [reg] - webname:jojo22fish@hotmail.com
+2008-10-25 13:33:46,635 INFO [reg] - address:null
+2008-10-25 13:33:46,636 INFO [reg] - password:jj5429494699
+2008-10-25 13:33:46,636 INFO [reg] - mobile:null
+2008-10-25 13:33:46,636 INFO [reg] - answer:熊方安
+2008-10-25 13:33:46,636 INFO [reg] - question:我婆婆的姓名？
+2008-10-25 13:33:46,636 INFO [reg] - sex:1
+2008-10-25 13:33:46,637 INFO [reg] - username:庄慧萍
+2008-10-25 13:33:46,637 INFO [reg] - interset:[Ljava.lang.String;@54d9be5a
+2008-10-25 13:33:46,637 INFO [reg] - receive reginfo data ok ...
+2008-10-25 13:33:46,637 INFO [reg] - begin to get userinfo ...
+2008-10-25 13:33:46,638 INFO [reg] - userinfo:218.79.8.91
+2008-10-25 13:33:46,638 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; TencentTraveler ; .NET CLR 2.0.50727)
+2008-10-25 13:33:46,638 INFO [reg] - userinfo:218.79.8.91|218.79.8.91|0|null|/registerDispose1.jsp
+2008-10-25 13:33:46,638 INFO [reg] - end   to get userinfo ...
+2008-10-25 13:33:46,921 DEBUG [reg] - new user is create success
+2008-10-25 13:33:46,924 INFO [reg] - end to receive reginfo data ...
+2008-10-25 13:39:30,844 INFO [reg] - begin to receive ccb data ...
+2008-10-25 13:39:30,844 INFO [reg] - MERCHANTID:105290073990399
+2008-10-25 13:39:30,844 INFO [reg] - 签名数据:MERCHENT_ID=105290073990399&ACCREDIT_FLAG=0&ACCREDIT_ID=0021010500019405&TX_QUOTA=20000
+2008-10-25 13:39:30,845 INFO [reg] - 加密数据:43c6128b67e74f0e3310d1598c193ae13966a8aa95a235281bd9a1051b37a9e5c3ba8ed470ceae5427958193140f16590ec28ef73cf641c2b6579257a7579cf9b267e24c351200b0c8be0db7fa6704a27d163f1af5dffba278cb26d13241b6aca517492e86d16fc20d49ab2f939f8544264bd68f7b048ecea0dc70831233adc5
+2008-10-25 13:39:31,245 INFO [reg] - check sign ok ....
+2008-10-25 13:39:31,272 INFO [reg] - 申请授权....0021010500019405
+2008-10-25 13:39:31,333 INFO [reg] - 注册成功:0021010500019405
+2008-10-25 13:40:10,257 INFO [reg] - begin to receive data ...
+2008-10-25 13:40:10,258 INFO [reg] - 签名数据:selserialNo=BDP5771&payNo=002101020001941&selpayType=指付通交易&selcorpId=100190005722166&corporname=上海点佰趣信息科技有限公司&selaccountNo=1001242719300351501&regDate= 20081025133845&HSURL=http://www.paybyfinger.com.cn/getICBCPayResult.jsp&merCertID= Livebytouch.y.1001&bankName=icbc&Area_code=4000&regCardNo =6222004000107431322&userName=&receiveTime=20081025133845&sendTime=20081025134010&signState=1&TranErrorCode=98001121&TranErrorMsg =Ö÷»ú´í
+2008-10-25 13:40:10,259 INFO [reg] - 加密数据:iEq0gwCMl4YXvny7pMbUaKhKP5wNrxTAoY8+/FFE+u71eXjtL7vDTSt7XRW8X1Tf1RuhE2Y29a6DgPl3VNimZ8+9tp4m57TxpGj5YBOChY3DL/vb/dloxVMykgRd4AqMJ4tcmRwzk7AV6OHR5SqdIu/N7v1snBfxp9c+5cuhWk0=
+2008-10-25 13:40:10,261 INFO [reg] - 验证签名NC返回：<html><head><title>ÑéÇ©Ãû½á¹û</title><result>1</result></head><body><p>ÑéÇ©ÃûÊ§°Ü</p></body></html>
+2008-10-25 13:40:10,261 INFO [reg] - 验证签名失败
+2008-10-25 13:40:10,261 ERROR [reg] - verify fail
+2008-10-25 14:12:05,236 INFO [reg] - begin to receive data ...
+2008-10-25 14:12:05,237 INFO [reg] - 签名数据:selserialNo=BDP5771&payNo=002101020001938&selpayType=指付通交易&selcorpId=100190005722166&corporname=上海点佰趣信息科技有限公司&selaccountNo=1001242719300351501&regDate= 20081025141136&HSURL=http://www.paybyfinger.com.cn/getICBCPayResult.jsp&merCertID= Livebytouch.y.1001&bankName=icbc&Area_code=1001&regCardNo =6222021001005099830&userName=&receiveTime=20081025141136&sendTime=20081025141204&signState=1&TranErrorCode=98001109&TranErrorMsg =Ö÷»ú´í
+2008-10-25 14:12:05,238 INFO [reg] - 加密数据:akW/gB0U9NGINU2wQbUkUTVytR45OOsgNrdgNxc4duEZuZxbQpVp2OjX02xGIUihV5FqAPh5o44jmmu6YzGI5CXHnulWk8Mwja61a4vVF/I0Ri8tLfhB5Z4WVK8YUua5MiQEGnq3S5lcqX649m7sG40Uv0O2zqhDWVDr4PmKesw=
+2008-10-25 14:12:05,240 INFO [reg] - 验证签名NC返回：<html><head><title>ÑéÇ©Ãû½á¹û</title><result>1</result></head><body><p>ÑéÇ©ÃûÊ§°Ü</p></body></html>
+2008-10-25 14:12:05,240 INFO [reg] - 验证签名失败
+2008-10-25 14:12:05,241 ERROR [reg] - verify fail
+2008-10-25 14:58:38,938 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 14:58:38,939 INFO [reg] - webname:zhangyunbabela@126.com
+2008-10-25 14:58:38,939 INFO [reg] - address:null
+2008-10-25 14:58:38,939 INFO [reg] - password:851111
+2008-10-25 14:58:38,939 INFO [reg] - mobile:null
+2008-10-25 14:58:38,940 INFO [reg] - answer:灰灰
+2008-10-25 14:58:38,940 INFO [reg] - question:狗
+2008-10-25 14:58:38,940 INFO [reg] - sex:1
+2008-10-25 14:58:38,940 INFO [reg] - username:赵艳丽
+2008-10-25 14:58:38,941 INFO [reg] - interset:[Ljava.lang.String;@598d67b1
+2008-10-25 14:58:38,941 INFO [reg] - receive reginfo data ok ...
+2008-10-25 14:58:38,941 INFO [reg] - begin to get userinfo ...
+2008-10-25 14:58:38,941 INFO [reg] - userinfo:218.79.34.22
+2008-10-25 14:58:38,941 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) )
+2008-10-25 14:58:38,942 INFO [reg] - userinfo:218.79.34.22|218.79.34.22|0|null|/registerDispose1.jsp
+2008-10-25 14:58:38,942 INFO [reg] - end   to get userinfo ...
+2008-10-25 14:58:38,954 INFO [reg] - end to receive reginfo data ...
+2008-10-25 15:20:20,234 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 15:20:20,235 INFO [reg] - webname:551967255@qq.com
+2008-10-25 15:20:20,235 INFO [reg] - address:null
+2008-10-25 15:20:20,235 INFO [reg] - password:wx870130
+2008-10-25 15:20:20,235 INFO [reg] - mobile:null
+2008-10-25 15:20:20,235 INFO [reg] - answer:pariswang
+2008-10-25 15:20:20,236 INFO [reg] - question:paris
+2008-10-25 15:20:20,236 INFO [reg] - sex:0
+2008-10-25 15:20:20,236 INFO [reg] - username:王鑫
+2008-10-25 15:20:20,236 INFO [reg] - interset:[Ljava.lang.String;@597290e8
+2008-10-25 15:20:20,236 INFO [reg] - receive reginfo data ok ...
+2008-10-25 15:20:20,237 INFO [reg] - begin to get userinfo ...
+2008-10-25 15:20:20,237 INFO [reg] - userinfo:116.232.140.206
+2008-10-25 15:20:20,237 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727)
+2008-10-25 15:20:20,237 INFO [reg] - userinfo:116.232.140.206|116.232.140.206|0|null|/registerDispose1.jsp
+2008-10-25 15:20:20,237 INFO [reg] - end   to get userinfo ...
+2008-10-25 15:20:20,403 DEBUG [reg] - new user is create success
+2008-10-25 15:20:20,405 INFO [reg] - end to receive reginfo data ...
+2008-10-25 15:21:58,103 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 15:21:58,104 INFO [reg] - webname:kj1022@126.com
+2008-10-25 15:21:58,104 INFO [reg] - address:null
+2008-10-25 15:21:58,105 INFO [reg] - password:kj66101336
+2008-10-25 15:21:58,105 INFO [reg] - mobile:null
+2008-10-25 15:21:58,105 INFO [reg] - answer:有3人.
+2008-10-25 15:21:58,105 INFO [reg] - question:我家有几人?
+2008-10-25 15:21:58,105 INFO [reg] - sex:0
+2008-10-25 15:21:58,106 INFO [reg] - username:康杰
+2008-10-25 15:21:58,106 INFO [reg] - interset:[Ljava.lang.String;@24964c7
+2008-10-25 15:21:58,106 INFO [reg] - receive reginfo data ok ...
+2008-10-25 15:21:58,106 INFO [reg] - begin to get userinfo ...
+2008-10-25 15:21:58,106 INFO [reg] - userinfo:218.81.81.206
+2008-10-25 15:21:58,107 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)
+2008-10-25 15:21:58,107 INFO [reg] - userinfo:218.81.81.206|218.81.81.206|0|null|/registerDispose1.jsp
+2008-10-25 15:21:58,107 INFO [reg] - end   to get userinfo ...
+2008-10-25 15:21:58,316 DEBUG [reg] - new user is create success
+2008-10-25 15:21:58,319 INFO [reg] - end to receive reginfo data ...
+2008-10-25 15:57:03,184 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 15:57:03,185 INFO [reg] - webname:303098179@qq.com
+2008-10-25 15:57:03,185 INFO [reg] - address:null
+2008-10-25 15:57:03,185 INFO [reg] - password:19841022
+2008-10-25 15:57:03,185 INFO [reg] - mobile:null
+2008-10-25 15:57:03,186 INFO [reg] - answer:王晗
+2008-10-25 15:57:03,186 INFO [reg] - question:我的老婆
+2008-10-25 15:57:03,186 INFO [reg] - sex:0
+2008-10-25 15:57:03,186 INFO [reg] - username:feng
+2008-10-25 15:57:03,187 INFO [reg] - interset:[Ljava.lang.String;@43675bf3
+2008-10-25 15:57:03,187 INFO [reg] - receive reginfo data ok ...
+2008-10-25 15:57:03,187 INFO [reg] - begin to get userinfo ...
+2008-10-25 15:57:03,187 INFO [reg] - userinfo:218.1.106.14
+2008-10-25 15:57:03,187 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+2008-10-25 15:57:03,188 INFO [reg] - userinfo:218.1.106.14|218.1.106.14|0|null|/registerDispose1.jsp
+2008-10-25 15:57:03,188 INFO [reg] - end   to get userinfo ...
+2008-10-25 15:57:03,363 DEBUG [reg] - new user is create success
+2008-10-25 15:57:03,366 INFO [reg] - end to receive reginfo data ...
+2008-10-25 16:10:51,261 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 16:10:51,261 INFO [reg] - webname:zhaoyang901129@163.com
+2008-10-25 16:10:51,262 INFO [reg] - address:null
+2008-10-25 16:10:51,262 INFO [reg] - password:112923
+2008-10-25 16:10:51,262 INFO [reg] - mobile:null
+2008-10-25 16:10:51,262 INFO [reg] - answer:905523
+2008-10-25 16:10:51,263 INFO [reg] - question:我和我妈的生日
+2008-10-25 16:10:51,263 INFO [reg] - sex:0
+2008-10-25 16:10:51,263 INFO [reg] - username:赵阳
+2008-10-25 16:10:51,263 INFO [reg] - interset:[Ljava.lang.String;@15a3622d
+2008-10-25 16:10:51,263 INFO [reg] - receive reginfo data ok ...
+2008-10-25 16:10:51,264 INFO [reg] - begin to get userinfo ...
+2008-10-25 16:10:51,264 INFO [reg] - userinfo:218.1.106.14
+2008-10-25 16:10:51,264 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+2008-10-25 16:10:51,264 INFO [reg] - userinfo:218.1.106.14|218.1.106.14|0|null|/registerDispose1.jsp
+2008-10-25 16:10:51,264 INFO [reg] - end   to get userinfo ...
+2008-10-25 16:10:51,525 DEBUG [reg] - new user is create success
+2008-10-25 16:10:51,528 INFO [reg] - end to receive reginfo data ...
+2008-10-25 16:23:30,883 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 16:23:30,883 INFO [reg] - webname:wh1018@live.cn
+2008-10-25 16:23:30,884 INFO [reg] - address:null
+2008-10-25 16:23:30,884 INFO [reg] - password:139161
+2008-10-25 16:23:30,884 INFO [reg] - mobile:null
+2008-10-25 16:23:30,884 INFO [reg] - answer:妞妞
+2008-10-25 16:23:30,885 INFO [reg] - question:最爱的人？
+2008-10-25 16:23:30,885 INFO [reg] - sex:0
+2008-10-25 16:23:30,885 INFO [reg] - username:吴寅
+2008-10-25 16:23:30,885 INFO [reg] - interset:[Ljava.lang.String;@732d14e0
+2008-10-25 16:23:30,885 INFO [reg] - receive reginfo data ok ...
+2008-10-25 16:23:30,886 INFO [reg] - begin to get userinfo ...
+2008-10-25 16:23:30,886 INFO [reg] - userinfo:116.227.91.8
+2008-10-25 16:23:30,886 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; GreenBrowser)
+2008-10-25 16:23:30,886 INFO [reg] - userinfo:116.227.91.8|116.227.91.8|0|null|/registerDispose1.jsp
+2008-10-25 16:23:30,886 INFO [reg] - end   to get userinfo ...
+2008-10-25 16:23:31,070 DEBUG [reg] - new user is create success
+2008-10-25 16:23:31,073 INFO [reg] - end to receive reginfo data ...
+2008-10-25 16:31:34,956 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 16:31:34,957 INFO [reg] - webname:angline4u@hotmail.com
+2008-10-25 16:31:34,957 INFO [reg] - address:null
+2008-10-25 16:31:34,958 INFO [reg] - password:3039931616
+2008-10-25 16:31:34,958 INFO [reg] - mobile:null
+2008-10-25 16:31:34,958 INFO [reg] - answer:123321
+2008-10-25 16:31:34,958 INFO [reg] - question:123321
+2008-10-25 16:31:34,958 INFO [reg] - sex:1
+2008-10-25 16:31:34,959 INFO [reg] - username:姚戊平
+2008-10-25 16:31:34,959 INFO [reg] - interset:[Ljava.lang.String;@70dc6f58
+2008-10-25 16:31:34,959 INFO [reg] - receive reginfo data ok ...
+2008-10-25 16:31:34,959 INFO [reg] - begin to get userinfo ...
+2008-10-25 16:31:34,960 INFO [reg] - userinfo:58.38.202.178
+2008-10-25 16:31:34,960 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)
+2008-10-25 16:31:34,960 INFO [reg] - userinfo:58.38.202.178|58.38.202.178|0|null|/registerDispose1.jsp
+2008-10-25 16:31:34,960 INFO [reg] - end   to get userinfo ...
+2008-10-25 16:31:35,284 DEBUG [reg] - new user is create success
+2008-10-25 16:31:35,286 INFO [reg] - end to receive reginfo data ...
+2008-10-25 19:10:44,988 INFO [reg] - begin to receive reginfo data ...
+2008-10-25 19:10:44,988 INFO [reg] - webname:pretty-025@163.com
+2008-10-25 19:10:44,989 INFO [reg] - address:null
+2008-10-25 19:10:44,989 INFO [reg] - password:19921103
+2008-10-25 19:10:44,989 INFO [reg] - mobile:null
+2008-10-25 19:10:44,989 INFO [reg] - answer:妈妈
+2008-10-25 19:10:44,989 INFO [reg] - question:我的妈妈是？
+2008-10-25 19:10:44,990 INFO [reg] - sex:1
+2008-10-25 19:10:44,990 INFO [reg] - username:周蓓
+2008-10-25 19:10:44,990 INFO [reg] - interset:[Ljava.lang.String;@2ac71fda
+2008-10-25 19:10:44,990 INFO [reg] - receive reginfo data ok ...
+2008-10-25 19:10:44,991 INFO [reg] - begin to get userinfo ...
+2008-10-25 19:10:44,991 INFO [reg] - userinfo:116.235.90.102
+2008-10-25 19:10:44,991 INFO [reg] - userinfo:Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; QQDownload 1.7; TencentTraveler 4.0)
+2008-10-25 19:10:44,991 INFO [reg] - userinfo:116.235.90.102|116.235.90.102|0|null|/registerDispose1.jsp
+2008-10-25 19:10:44,991 INFO [reg] - end   to get userinfo ...
+2008-10-25 19:10:45,546 DEBUG [reg] - new user is create success
+2008-10-25 19:10:45,548 INFO [reg] - end to receive reginfo data ...
