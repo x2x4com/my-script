@@ -1,0 +1,201 @@
+#!/usr/bin/perl
+
+use strict;
+use File::Basename;
+
+my $web = { 'nginx' => {'use' => '1',
+									'pack_version' => 'nginx-0.6.34',
+									'pack_suffix' => '.tar.gz',
+									'install_dir' => '/usr/local/webservice',
+									'config_options' => "--with-http_stub_status_module --with-http_ssl_module",
+									'htdocs' => '/usr/local/webservice/htdocs',
+									'run_user' => 'www',
+									'run_group' => 'www',
+									'config_script' => 'nginx.config'
+									},
+					'lighttpd' =>{'use' => '1',
+									'pack_version' => 'lighttpd-1.4.21',
+									'pack_suffix' => '.tar.gz',
+									'install_dir' => '/usr/local/webservice',
+									'config_options' => '--disable-ipv6 --with-mysql=/usr/bin/mysql_config --with-kerberos5 --with-zlib --with-bzip2 --with-memcache',
+									'htdocs' => '/usr/local/webservice/htdocs',
+									'run_user' => 'www',
+									'run_group' => 'www',
+									'config_script' => 'lighttpd.config'
+									},
+					'apache' =>{'use' => '0',
+									'pack_version' => '',
+									'pack_suffix' => '.tar.gz',
+									'install_dir' => '',
+									'config_options' => '',
+									'htdocs' => '',
+									'run_user' => '',
+									'run_group' => '',
+									'config_script' => ''
+									},	
+};
+
+
+my $pce_version = 'pcre-7.8';
+my $pce_suffix = '.tar.gz';
+my $pce = $pce_version . $pce_suffix;
+my $pce_install = 0;
+
+
+#================================
+my $base_name = basename $0;
+my ($soft_dir,@do_web,$web_soft,$pack_version,$pack_suffix,$install_dir,$config_options,$htdocs,$run_user,$run_group,$config_script);
+
+if ( defined $ARGV[0] && -d $ARGV[0] ) {
+	$soft_dir = $ARGV[0];
+} else {
+	die "No package dir or wrong package dir\nusage: $base_name package_dir\n";
+}
+
+print "Welcome to Webserver install step\n";
+sleep 1;
+
+warn "Sorry, this script only support RH-Base system\n" unless  ( -f '/etc/redhat-release' );
+die "Please run this script as root\n" unless ($< == 0 ) ;
+die "Can not find ${soft_dir}/${pce}\n" unless (-f "${soft_dir}/${pce}");
+
+
+foreach my $list (keys %{$web}){
+	if ($web->{$list}->{use} == 1){
+		push @do_web, $list;
+	}
+}
+
+SELECT_SERVER:
+
+print "Please choose webserver software to install\n";
+for (my $i=0; $i<@do_web;$i++){
+	print "\[$i\]     $do_web[$i]\n";
+}
+print "\[0-" . (@do_web-1) . "\]: ";
+my $input = <STDIN>;
+chomp $input;
+if ( $input =~ /\d+/ && $input >= 0 && $input < @do_web ) {
+	$web_soft = $do_web[$input];
+} else {
+	goto SELECT_SERVER;
+}
+undef $input;
+
+sub user_input {
+	my ($words,$default) = @_;
+	my $loop = 1;   
+	while ($loop){ 
+		print "$words";
+		my $input = <STDIN>;
+		chomp $input;
+		if ( $input =~ /\w+/ ) {
+			$loop = 0;
+			return $input;
+		} else {
+			if  ($default =~ /\w+/) {
+				$loop = 0;
+				return $default; 
+			}
+		} 
+	}
+}
+
+sub tar_choose {
+	my ($suffix) = @_;
+	if ($suffix =~ /gz$/){
+		my $tar = 'tar -zxf';
+		return $tar;
+	} elsif ($suffix =~ /bz2$/) {
+		my $tar = 'tar -jxf';
+		return $tar;
+	} else {
+		return undef;
+	}
+}
+
+print "Choose to install $web_soft\n";
+sleep 1;
+$pce_install = user_input("Install PCE? (0=no,1=yes) " , $pce_install);
+$pack_version = user_input("Package Name: (default ". $web->{$web_soft}->{pack_version} . ")" , $web->{$web_soft}->{pack_version});
+$pack_suffix = user_input("Package Suffix: (default ". $web->{$web_soft}->{pack_suffix} . ")" , $web->{$web_soft}->{pack_suffix});
+$install_dir = user_input("$pack_version Install Dir: (default ". $web->{$web_soft}->{install_dir} . ")" , $web->{$web_soft}->{install_dir});
+#$config_options = user_input("$pack_version configure options: (default ". $web->{$web_soft}->{config_options} . ")" , $web->{$web_soft}->{config_options});
+print "$pack_version configure options: (default ". $web->{$web_soft}->{config_options} . ")";
+my $input = <STDIN>;
+chomp $input;
+if ( $input =~ /\w+/ ) {
+	$config_options = $input;
+} else {
+	$config_options = $web->{$web_soft}->{config_options};
+}
+$htdocs = user_input("Htdocs: (default ". $web->{$web_soft}->{htdocs} . ")" , $web->{$web_soft}->{htdocs});
+$run_user = user_input("Run user: (default ". $web->{$web_soft}->{run_user} . ")" , $web->{$web_soft}->{run_user});
+$run_group = user_input("Run group: (default ". $web->{$web_soft}->{run_group} . ")" , $web->{$web_soft}->{run_group});
+$config_script = user_input("Config script: (default ". $web->{$web_soft}->{config_script} . ")" , $web->{$web_soft}->{config_script});
+my $pack = $pack_version . $pack_suffix;
+die "Can not find ${soft_dir}/${pack}\n" unless (-f "${soft_dir}/${pack}");
+
+#print "Version: $pack_version
+#Suffix: $pack_suffix
+#Install dir: $install_dir
+#Configure options: $config_options
+#Htdocs: $htdocs
+#Run user: $run_user
+#Config scrpit: $config_script\n";
+
+#================================
+use Cwd;
+use File::Copy;
+my $current_dir = getcwd ;
+#print "$current_dir\n";
+if ($pce_install) {
+print "Install $pce_version\n";
+sleep 1;
+copy ("${soft_dir}/${pce}","/tmp") or die "Can not copy ${soft_dir}/${pce} to /tmp, $!\n";
+my $tar = tar_choose($pce_suffix);
+die "Unknow suffix type $pce_suffix\n" unless (defined $tar);
+chdir "/tmp" or die "Can not change dir to /tmp, $!\n";
+#print "$tar\n";
+my $run = system "$tar $pce";
+die "Can not unzip $pce\n" unless ($run == 0);
+chdir "$pce_version" or die "Can not change dir to $pce_version, $!\n";
+my $run = system "./configure";
+die "Can not configure $pce\n" unless ($run == 0);
+my $run = system "make -j3";
+die "Can not make $pce\n" unless ($run == 0);
+my $run = system "make install";
+die "Can not make install $pce\n" unless ($run == 0);
+chdir "$current_dir" && system "rm -rf /tmp/$pce /tmp/$pce_version";
+}
+
+#================================
+
+print "Install $pack_version\n";
+sleep 1;
+copy ("${soft_dir}/${pack}","/tmp") or die "Can not copy ${soft_dir}/${pack} to /tmp, $!\n";
+my $tar = tar_choose($pack_suffix);
+die "Unknow suffix type $pack_suffix\n" unless (defined $tar);
+chdir "/tmp" or die "Can not change dir to /tmp, $!\n";
+#print "$tar\n";
+my $run = system "$tar $pack";
+die "Can not unzip $pce\n" unless ($run == 0);
+chdir "$pack_version" or die "Can not change dir to $pack_version, $!\n";
+my $run = system "./configure --prefix=${install_dir}/${pack_version}"; 
+die "Can not configure $pack\n" unless ($run == 0);
+sleep 3;
+my $run = system "make -j3";
+die "Can not make $pack\n" unless ($run == 0);
+my $run = system "make install";
+die "Can not make install $pack\n" unless ($run == 0);
+chdir "$current_dir" && system "rm -rf /tmp/$pack /tmp/$pack_version";
+my $link = "ln -s ${install_dir}/${pack_version} ${install_dir}/${web_soft}";
+print "$link\n";
+sleep 1;
+system "$link";
+
+if (-x "${soft_dir}/../bin/${config_script}") {
+	print "Configure $web_soft\n";
+	system "${soft_dir}/../bin/${config_script} ${soft_dir}/../conf ${install_dir}/${web_soft} $htdocs $run_user $run_group";
+}
+	

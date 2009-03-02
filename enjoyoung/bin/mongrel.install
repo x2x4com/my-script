@@ -1,0 +1,221 @@
+#!/bin/bash
+
+ruby_version='ruby-1.8.6-p287'
+gem_version='rubygems-1.3.1'
+IM_version='ImageMagick-6.4.9-3'
+RM_version='RMagick-2.9.1'
+config_script='mongrel.config'
+
+tmp=/tmp/mongrel
+
+if [ ! -z $1 ] 
+then
+	soft_dir=$1
+else
+	echo "usage: `basename $0` package_dir"
+	exit 255
+fi
+
+echo "Welcome to Mongrel install step"
+sleep 1
+
+if [ ! -f '/etc/redhat-release' ]
+then
+	echo "Sorry, this script only support RH-Base system"
+	exit 0
+fi
+
+if [ $UID -ne 0 ]
+then
+	echo "Please run this script as root"
+	exit 1
+fi
+
+if [ ! -d $soft_dir ]
+then
+	echo "Can not find $soft_dir"
+	exit 255
+fi
+
+if [ `echo $tmp | grep -e "^/tmp" -c` -eq 0 ]
+then
+	echo "!!Please setup tmp dir to /tmp/xxx"
+	exit 255
+fi
+
+if [ ! -f "${soft_dir}/ruby/${ruby_version}.tar.gz" ]
+then
+	echo "Can not find ${soft_dir}/ruby/${ruby_version}.tar.gz"
+	exit 255
+fi
+
+if [ ! -f "${soft_dir}/ruby/${gem_version}.tgz" ]
+then
+	echo "Can not find ${soft_dir}/ruby/${gem_version}..tgz"
+	exit 255
+fi
+
+if [ ! -f "${soft_dir}/ruby/${RM_version}.tar.gz" ]
+then
+	echo "Can not find ${soft_dir}/ruby/${RM_version}.tar.gz"
+	exit 255
+fi
+
+if [ ! -f "${soft_dir}/${IM_version}.tar.gz" ]
+then
+	echo "Can not find ${soft_dir}/${IM_version}.tar.gz"
+	exit 255
+fi
+
+if [ `cat ${soft_dir}/../.mongrel.stats` -eq 0 ]
+then
+
+	pwd_now=`pwd`
+
+	err_info () {
+		echo "Failed to $1"
+		cd $pwd_now
+		rm -rf $tmp
+		exit 255
+	}
+
+
+	echo "Install Ruby"
+	read -p "Please enter ruby install dir: [Default /usr/local/${ruby_version}]" ruby_install_dir
+
+	default_install=0
+	if [ -z "$ruby_install_dir" ]
+	then
+		ruby_install_dir="/usr/local/${ruby_version}"
+		default_install=1
+	fi
+
+	mkdir -p $tmp
+	cp ${soft_dir}/ruby/${ruby_version}.tar.gz ${soft_dir}/ruby/${gem_version}.tgz ${soft_dir}/ruby/${RM_version}.tar.gz ${soft_dir}/${IM_version}.tar.gz $tmp/.
+	if [ $? -ne 0 ]
+	then 
+		err_info "cp source packet to $tmp"
+	fi
+
+	cd $tmp
+	tar -zxf ${ruby_version}.tar.gz
+	if [ $? -ne 0 ]
+	then 
+		err_info "unzip ${ruby_version}.tar.gz"
+	fi
+	cd ${ruby_version}
+	./configure --prefix=$ruby_install_dir
+	if [ $? -ne 0 ]
+	then
+		err_info "configure ${ruby_version}"
+	fi
+	sleep 3
+	make test
+	if [ $? -ne 0 ]
+	then
+		err_info "make test ${ruby_version}"
+	fi
+	make -j3
+	if [ $? -ne 0 ]
+	then
+		err_info "make -j3 ${ruby_version}"
+	fi
+	make install
+	if [ $? -ne 0 ]
+	then
+		err_info "make install ${ruby_version}"
+	fi
+
+	ln -s ${ruby_install_dir} /usr/local/ruby
+	echo "export PATH=\$PATH:/usr/local/ruby/bin" >> /etc/profile
+	source /etc/profile
+
+	echo "Install Ruby-Gem"
+	cd $tmp
+	tar -zxf ${gem_version}.tgz
+	if [ $? -ne 0 ]
+	then 
+		err_info "unzip ${gem_version}.tar.gz"
+	fi
+	cd ${gem_version}
+	${ruby_install_dir}/bin/ruby setup.rb
+	if [ $? -ne 0 ]
+	then
+		err_info "Can not install ${gem_version}"
+	fi
+
+	echo "Install enjoyoung project need ruby packages"
+	sleep 1
+	echo "Install server need's ImageMagick"
+	sleep 1
+	echo "Install delegate libraries"
+	sleep 1
+	yum install freetype freetype-devel libjpeg libjpeg-devel libpng libpng-devel libwmf libwmf-devel ghostscript ghostscript-devel -y
+	if [ $? -ne 0 ]
+	then 
+		err_info "Error from command: yum install ghostscript freetype -y"
+	fi
+	cd $tmp
+	tar -zxf ${IM_version}.tar.gz
+	if [ $? -ne 0 ]
+	then 
+		err_info "unzip ${IM_version}.tar.gz"
+	fi
+	cd ${IM_version}
+	./configure --disable-static --with-modules --without-perl --without-magick-plus-plus --with-quantum-depth=8 --prefix=/usr/local/${IM_version}
+	if [ $? -ne 0 ]
+	then
+		err_info "configure ${IM_version}"
+	fi
+	sleep 3
+	make -j3
+	if [ $? -ne 0 ]
+	then
+		err_info "make -j3 ${IM_version}"
+	fi
+	make install
+	if [ $? -ne 0 ]
+	then
+		err_info "make install ${IM_version}"
+	fi
+
+	ln -s /usr/local/${IM_version} /usr/local/ImageMagick
+	echo "add ImageMagick lib to /etc/ld.so.conf"
+	echo '/usr/local/ImageMagick/lib' >> /etc/ld.so.conf && ldconfig
+	sed -i -e "s#^\(export PATH=\$PATH\:/usr/local/ruby/bin\)#\1\:/usr/local/ImageMagick/bin#g" /etc/profile && source /etc/profile
+
+
+	echo "Install RMagick"
+	sleep 1
+	cd $tmp
+	tar -zxf ${RM_version}.tar.gz
+	if [ $? -ne 0 ]
+	then 
+		err_info "unzip ${RM_version}.tar.gz"
+	fi
+	cd ${RM_version}
+	${ruby_install_dir}/bin/ruby setup.rb
+	if [ $? -ne 0 ]
+	then
+		err_info "Can not install ${RM_version}"
+	fi
+	echo 1 > ${soft_dir}/../.mongrel.stats
+fi
+
+echo "Please make sure you can use internet"
+sleep 1
+echo "Install capistrano configatron hoe memcache-client mongrel_cluster rails rake ruby-openid"
+sleep 1
+gem install capistrano configatron hoe memcache-client mongrel_cluster rails rake ruby-openid -V
+echo "Install mysql support"
+sleep 1
+gem install mysql -- --with-mysql-config=/usr/bin/mysql_config 
+echo "install josevalim-rails-footnotes"
+sleep 1
+gem sources -a http://gems.github.com
+gem install josevalim-rails-footnotes -V
+
+if [ -x "${soft_dir}/../bin/${config_script}" ]
+then
+	${soft_dir}/../bin/${config_script}
+fi

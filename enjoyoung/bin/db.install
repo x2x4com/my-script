@@ -1,0 +1,89 @@
+#!/bin/bash
+
+if [ ! -z $1 ] 
+then
+	soft_dir=$1
+else
+	echo "usage: `basename $0` package_dir"
+	exit 255
+fi
+
+rpm_pre='MySQL-'
+
+echo "Welcome to DB install step"
+sleep 1
+
+if [ ! -f '/etc/redhat-release' ]
+then
+	echo "Sorry, this script only support RH-Base system"
+	exit 0
+fi
+
+if [ $UID -ne 0 ]
+then
+	echo "Please run this script as root"
+	exit 1
+fi
+
+if [ ! -d $soft_dir ]
+then
+	echo "Can not find $soft_dir"
+	exit 255
+fi
+
+if [ `ls -l ${soft_dir}/${rpm_pre}* | wc -l` -ne 4 ]
+then
+	echo "Miss ${soft_dir}/${rpm_pre}* at $soft_dir, need 4 package: server,shared,devel,client"
+fi
+
+echo "Check system mysql package"
+sys_mysql=0
+sys_mysql=`rpm -qa | grep -e "mysql-[server|devel]" -c`
+inst_mysql=1
+if [ $sys_mysql -eq 2 ]
+then
+	inst_mysql=0
+fi
+
+if [ $inst_mysql -eq 1 ] && [ `cat ${soft_dir}/../.db.stats` -eq 0 ]
+then
+	rpm -ivh ${soft_dir}/${rpm_pre}*.rpm
+	if [ $? -eq 0 ]
+	then
+		echo 1 > "${soft_dir}/../.db.stats"	
+	fi
+else
+	echo "You have installed MySQL Server
+if you want to reinstall, please uninstall first
+system rpm: rpm -e
+my script install: vi #your_install_dir/.db.stats and set 1 to 0"
+	exit 0
+fi
+
+echo "Please input your new password for mysql root"
+before_tty=`stty -g`
+while [ -z $pass1 ] || [ -z $pass2 ] || [ $pass1 != $pass2 ]
+do
+	stty -echo
+	read -p "Type your passwd :" pass1
+	echo
+	read -p "Conform your passwd :" pass2
+	echo
+	stty $before_tty
+	if [ -z $pass1 ]
+	then
+ 		echo "passwd should not be empty!"
+	elif [ $pass1 != $pass2 ]
+	then
+		echo "passwd not match! retype again!"
+	fi
+done
+
+mysqladmin -uroot password $pass1
+if [ $? -ne 0 ]
+then
+	echo "Failed to change mysql root password"
+	exit 1
+else
+	echo "MySQL Server root's password changed"
+fi 

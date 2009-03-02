@@ -1,0 +1,156 @@
+#!/bin/bash
+
+libevent='libevent-1.4.9-stable'
+memcached='memcached-1.2.6'
+tmp=/tmp/memcached
+
+if [ ! -z $1 ] 
+then
+	soft_dir=$1
+else
+	echo "usage: `basename $0` package_dir"
+	exit 255
+fi
+
+echo "Welcome to Memcached install step"
+sleep 1
+
+if [ ! -f '/etc/redhat-release' ]
+then
+	echo "Sorry, this script only support RH-Base system"
+	exit 0
+fi
+
+if [ $UID -ne 0 ]
+then
+	echo "Please run this script as root"
+	exit 1
+fi
+
+if [ ! -d $soft_dir ]
+then
+	echo "Can not find $soft_dir"
+	exit 255
+fi
+
+if [ ! -f "${soft_dir}/${libevent}.tar.gz" ]
+then
+	echo "Can not find ${soft_dir}/${libevent}.tar.gz"
+	exit 255
+fi
+
+if [ ! -f "${soft_dir}/${memcached}.tar.gz" ]
+then
+	echo "Can not find ${soft_dir}/${memcached}.tar.gz"
+	exit 255
+fi
+
+if [ `echo $tmp | grep -e "^/tmp" -c` -eq 0 ]
+then
+	echo "!!Please setup tmp dir to /tmp/xxx"
+	exit 255
+fi
+
+if [ `cat ${soft_dir}/../.memcached.stats` -ne 0 ]
+then
+	echo "You have installed Memcached
+if you want to reinstall, please uninstall first
+my script install: echo 0 > .memcached.stats"
+	exit 0
+fi
+
+pwd_now=`pwd`
+
+err_info () {
+	echo "Failed to $1"
+	cd $pwd_now
+	rm -rf $tmp
+	exit 255
+}
+
+
+
+read -p "Please enter memcached install dir: [Default /usr/local/webserivce/${memcached}]" mem_install_dir
+
+default_install=0
+if [ -z "$mem_install_dir" ]
+then
+	mem_install_dir="/usr/local/webservice/${memcached}"
+	default_install=1
+fi
+
+echo "Install libevent"
+sleep 3
+
+mkdir -p $tmp
+cp ${soft_dir}/${libevent}.tar.gz ${soft_dir}/${memcached}.tar.gz $tmp/.
+if [ $? -ne 0 ]
+then 
+	err_info "cp source packet to $tmp"
+fi
+
+cd $tmp
+tar -zxf ${libevent}.tar.gz
+if [ $? -ne 0 ]
+then 
+	err_info "unzip ${libevent}.tar.gz"
+fi
+cd ${libevent}
+./configure --prefix=/usr
+if [ $? -ne 0 ]
+then
+	err_info "configure ${libevent}"
+fi
+sleep 3
+make -j3
+if [ $? -ne 0 ]
+then
+	err_info "make -j3 ${libevent}"
+fi
+make install
+if [ $? -ne 0 ]
+then
+	err_info "make install ${libevent}"
+fi
+
+echo "Install Memcached"
+sleep 3
+cd $tmp
+tar -zxf ${memcached}.tar.gz
+if [ $? -ne 0 ]
+then 
+	err_info "unzip ${memcached}.tar.gz"
+fi
+cd ${memcached}
+./configure --prefix=$mem_install_dir  --enable-threads --with-libevent=/usr/local/lib
+if [ $? -ne 0 ]
+then
+	err_info "configure ${memcached}"
+fi
+sleep 3
+make -j3
+if [ $? -ne 0 ]
+then
+	err_info "make -j3 ${memcached}"
+fi
+make install
+if [ $? -ne 0 ]
+then
+	err_info "make install ${memcached}"
+fi
+
+cd $pwd_now
+
+echo "Memcaced install finish"
+
+echo "Copy script and make Memcached auto start"
+if [ $default_install -eq 1 ]
+then
+	ln -s $mem_install_dir /usr/local/webservice/memcached
+	mkdir -p /usr/local/webservice/sbin && cp "${soft_dir}/../sbin/memcached.sh" /usr/local/webservice/sbin/. && ln -s /usr/local/webservice/sbin/memcached.sh /etc/init.d/memcached && chkconfig --add memcached
+else
+	cp "${soft_dir}/../sbin/memcached.sh" $tmp && sed -i -e "s#\(MEMCACHED_HOME=\).*#\1\'${mem_install_dir}\'#g" $tmp/memcached.sh && cp $tmp/memcached.sh /etc/init.d/memcached
+fi
+echo 1 > "${soft_dir}/../.memcached.stats" && rm -rf $tmp
+
+$soft_dir/../bin/memcached.config && /etc/init.d/memcached start
