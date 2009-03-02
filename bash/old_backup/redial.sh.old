@@ -1,0 +1,13 @@
+#!/bin/sh 
+# 
+echo "ADSL-Redial >>" "Time="`/bin/date +%F`","`/bin/date +%k`":"`/bin/date +%M` "Status=Stop ADSL Now">> /var/log/adsl-status.log
+/usr/sbin/adsl-stop >> /var/log/adsl-status.log 2>&1
+sleep 10 
+echo "ADSL-Redial >>" "Time="`/bin/date +%F`","`/bin/date +%k`":"`/bin/date +%M` "Status=Start ADSL Now">> /var/log/adsl-status.log
+/usr/sbin/adsl-start >> /var/log/adsl-status.log 2>&1
+Extranet=`/sbin/ifconfig ppp0 | /bin/grep inet | /bin/cut -d : -f 2 | cut -d " " -f 1` 
+route add default gw $Extranet 
+echo "ADSL-Redial >>" "Time="`/bin/date +%F`","`/bin/date +%k`":"`/bin/date +%M` "Status=Restart Firewall " >> /var/log/adsl-status.log
+echo "ADSL-Redial >>" "Time="`/bin/date +%F`","`/bin/date +%k`":"`/bin/date +%M` "Status=Dymatic IP address is: $Extranet" >> /var/log/adsl-status.log
+exec /sbin/service shorewall restart
+/root/script/adsl-test.sh

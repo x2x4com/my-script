@@ -1,0 +1,5 @@
+#
+# cron-jobs for update sarg
+#
+
+30 00 * * *     /usr/bin/perl /root/script/sarg.pl

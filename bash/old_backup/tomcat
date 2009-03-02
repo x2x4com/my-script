@@ -1,0 +1,72 @@
+#!/bin/sh
+
+JAVA_HOME=/usr/local/java
+PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH:$HOME/bin
+TC_HOME=/usr/local/tomcat
+
+export JAVA_HOME PATH
+
+function status () {
+	echo "Show Java Processes"
+	echo "======================================================================="
+	ps -ef | egrep "java" | grep -v egrep 
+	echo "======================================================================="
+	echo
+	echo "Show Java LISTEN Port"
+	echo "======================================================================="
+	netstat -antp | grep java | grep LISTEN
+	echo "======================================================================="
+	echo 
+	echo "Show Java ESTABLISHED"
+	echo "======================================================================="
+	netstat -antp | grep java | grep ESTABLISHED
+	echo "======================================================================="
+	echo
+}
+
+function start () {
+        echo "Startting Apache ... Tomcat..."
+        sudo -u tomcat ${TC_HOME}/tomcat/bin/startup.sh &
+	sudo -u tomcat ${TC_HOME}/paybyfinger/Tomcat_5.28/bin/startup.sh &
+	sleep 5
+}
+
+function stop () {
+        echo "Stop Apache ... Tomcat..."
+        for i in `ps -ef | grep tomcat | grep java | grep -v grep | awk '{print $2}'`
+        do
+        kill $i
+        done
+	sleep 2
+}
+
+case "$1" in
+    "start")
+        start
+        status
+        ;;
+
+    "stop")
+        stop
+	echo "Nothing is OK"
+        status
+        ;;
+
+    "status")
+        status
+        ;;
+
+    "restart")
+        stop
+        echo "Noting is OK"
+        status
+        start
+        status
+        ;;
+
+    *)
+        echo "Usage : `basename $0` { start | stop | status | restart }"
+        exit 0
+        ;;
+esac
+
