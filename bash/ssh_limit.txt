@@ -1,0 +1,6 @@
+iptables -N SSH_CHECK
+iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j SSH_CHECK
+iptables -A SSH_CHECK -m recent --set --name SSH
+iptables -A SSH_CHECK -m recent --update --seconds 60 --hitcount 4 --name SSH -j DROP
+
+在60s内同IP只允许3次22端口的连接请求。
