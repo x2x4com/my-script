@@ -219,3 +219,4 @@ if [ -x "${soft_dir}/../bin/${config_script}" ]
 then
 	${soft_dir}/../bin/${config_script} ${soft_dir}../sbin
 fi
+
