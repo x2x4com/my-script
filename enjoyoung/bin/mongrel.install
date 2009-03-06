@@ -67,10 +67,12 @@ then
 	exit 255
 fi
 
+pwd_now=`pwd`
+
 if [ `cat ${soft_dir}/../.mongrel.stats` -eq 0 ]
 then
 
-	pwd_now=`pwd`
+
 
 	err_info () {
 		echo "Failed to $1"
@@ -199,8 +201,11 @@ then
 	then
 		err_info "Can not install ${RM_version}"
 	fi
-	echo 1 > ${soft_dir}/../.mongrel.stats
+	cd $pwd_now
+	echo 1 > .mongrel.stats
 fi
+
+
 
 echo "Please make sure you can use internet"
 sleep 1
@@ -215,8 +220,10 @@ sleep 1
 gem sources -a http://gems.github.com
 gem install josevalim-rails-footnotes -V
 
-if [ -x "${soft_dir}/../bin/${config_script}" ]
+cd $pwd_now
+
+if [ -x "bin/${config_script}" ]
 then
-	${soft_dir}/../bin/${config_script} ${soft_dir}../sbin
+	bin/${config_script} $pwd_now/sbin
 fi
 
