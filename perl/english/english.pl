@@ -170,21 +170,6 @@ sub input_default {
 </table>
 HTML_OFF
 
-#<table cellpadding="0" cellspacing="0" border="0" valign="center" width="20%">
-#<tr align="left" valign="middle">
-#<td valign="top">
-#<input type="submit" name="Submit" value="保存" />
-#</td>
-#</form>
-#<td valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-#<td valign="top">
-#<form action="english.pl" method="post">
-#<input type="hidden" name="type" value="0" />
-#<input type="submit" name="Submit" value="结束保存" />
-#</td>
-#</tr>
-#</form>
-#<br>
 			close (R_F);
 		} else {
 			print "<p>无法创建key文件，请检查$tmp是否可写</p>";
@@ -515,15 +500,6 @@ if ($q->param) {
 			my $example =  $q->param('example') || 'null';
 			input_post($key,$key1,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example);
 		} else {
-			my $word = $q->param('word');
-			my $symbol = $q->param('symbol');
-			my $trans = $q->param('trans');
-			my $w_type = $q->param('w_type');
-			my $key = $q->param('key');
-			my $synonym =  $q->param('synonym') || 'null';
-			my $antonym =  $q->param('antonym') || 'null';
-			my $example =  $q->param('example') || 'null';
-			print "$key,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example";
 			print $q->p({-align=>'center'},'提交有误');
 		}
 	} elsif ($q->param('type') == 3 ) {
