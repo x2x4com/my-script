@@ -46,7 +46,7 @@ END_HTML
 ##  _ei 文件由start_exam完成测试后(exam)为input_default创建(type=2)
 sub input_post {
 	##将单词写入数据库
-	my ($key,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example) = @_;
+	my ($key,$key1,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example) = @_;
 	##print "$key<br>$word<br>$symbol<br>$trans<br>$w_type<br>$synonym<br>$antonym<br>$example";
 	my ($key_failed,$local_key);
 	open KEY, "$tmp/${key}._es" or $key_failed = 1;
@@ -73,7 +73,7 @@ sub input_post {
 			print $q->p("$word保存成功");
 		}
 	$dbh->disconnect();
-	input_default(1);
+	input_default($key1);
 	} else {
 		unlink glob "$tmp/*._es";
 		print "<p>输入点错误，请不要恶意提交</p>";
@@ -95,7 +95,7 @@ sub input_default {
 		$key_failed = 1 unless ( $key == $local_key);
 		#print "$key_failed<br>";
 		close KEY;
-		unlink glob "$tmp/*._ei" or $key_failed = 1;
+		#unlink glob "$tmp/*._ei" or $key_failed = 1;
 		#print "$key_failed<br>";
 	}
 
@@ -119,6 +119,7 @@ sub input_default {
 <p>必填字段<br>
 <input type="hidden" name="type" value="2" />
 <input type="hidden" name="key" value="$rand_key" />
+<input type="hidden" name="key1" value="$key" />
  单词: <input type="text" name="word" value="" style='width:15%' />
  音标: <input type="text" name="symbol" value="" style='width:15%' />
  中文翻译: <input type="text" name="trans" value="" style='width:15%' />
@@ -151,11 +152,39 @@ sub input_default {
 <br>
 例句:<BR>
 <TEXTAREA ROWS=5 name="example" value="" style='width:60%'></TEXTAREA>
-<br>
-<input type="submit" name="Submit" value="提交" />
 </p>
+<table cellpadding="0" cellspacing="0" border="0" valign="center" width="20%">
+<tr align="left" valign="middle">
+<td valign="top">
+<input type="submit" name="Submit" value="保存" />
 </form>
+</td>
+<td valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td valign="top">
+<form action="english.pl" method="post">
+<input type="hidden" name="type" value="0" />
+<input type="submit" name="Submit" value="结束保存" />
+</form>
+</td>
+</tr>
+</table>
 HTML_OFF
+
+#<table cellpadding="0" cellspacing="0" border="0" valign="center" width="20%">
+#<tr align="left" valign="middle">
+#<td valign="top">
+#<input type="submit" name="Submit" value="保存" />
+#</td>
+#</form>
+#<td valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+#<td valign="top">
+#<form action="english.pl" method="post">
+#<input type="hidden" name="type" value="0" />
+#<input type="submit" name="Submit" value="结束保存" />
+#</td>
+#</tr>
+#</form>
+#<br>
 			close (R_F);
 		} else {
 			print "<p>无法创建key文件，请检查$tmp是否可写</p>";
@@ -474,7 +503,18 @@ if ($q->param) {
 		#	print $q->p({-align=>'center'},'提交有误');
 		#}
 	} elsif ($q->param('type') == 2 ) {
-		if ( ($q->param('key') =~ /^\w+/ ) && ($q->param('word') =~ /^\w+/ ) && ($q->param('symbol')  =~ /^\w+/ ) && ($q->param('trans') =~ /^\w+/ ) && ($q->param('w_type') =~ /^\w+/ )) {
+		if ( ($q->param('key') =~ /^\w+/ ) && ($q->param('word') =~ /^\w+/ ) && ($q->param('symbol')  =~ /^.*/ ) && ($q->param('trans') =~ /^\w+/ ) && ($q->param('w_type') =~ /^\w+/ )) {
+			my $word = $q->param('word');
+			my $symbol = $q->param('symbol');
+			my $trans = $q->param('trans');
+			my $w_type = $q->param('w_type');
+			my $key = $q->param('key');
+			my $key1 = $q->param('key1');
+			my $synonym =  $q->param('synonym') || 'null';
+			my $antonym =  $q->param('antonym') || 'null';
+			my $example =  $q->param('example') || 'null';
+			input_post($key,$key1,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example);
+		} else {
 			my $word = $q->param('word');
 			my $symbol = $q->param('symbol');
 			my $trans = $q->param('trans');
@@ -483,9 +523,7 @@ if ($q->param) {
 			my $synonym =  $q->param('synonym') || 'null';
 			my $antonym =  $q->param('antonym') || 'null';
 			my $example =  $q->param('example') || 'null';
-			input_post($key,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example);
-		} else {
-			unlink glob "$tmp/*._es";
+			print "$key,$word,$symbol,$trans,$w_type,$synonym,$antonym,$example";
 			print $q->p({-align=>'center'},'提交有误');
 		}
 	} elsif ($q->param('type') == 3 ) {
@@ -500,9 +538,11 @@ if ($q->param) {
 		} else {
 			print $q->p({-align=>'center'},'进入点错误','c = ', $q->param('c'),'t = ' , $q->param('t'));
 		}
+	} elsif ($q->param('type') == 0 ) {
+		$default = 1;
 	} else {
 		print $q->p({-align=>'center'},'请求错误');
-	}
+	} 
 } else {
 	$default = 1;
 }
