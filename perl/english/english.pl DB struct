@@ -1,0 +1,33 @@
+CREATE TABLE `english`.`words` (
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '序号',
+  `word` VARCHAR(20)  NOT NULL COMMENT '单词',
+  `symbol` VARCHAR(20)  NOT NULL COMMENT '音标',
+  `trans` VARCHAR(40)  NOT NULL COMMENT '翻译',
+  `type` VARCHAR(20)  NOT NULL COMMENT '单词类型',
+  `synonym` VARCHAR(50)  DEFAULT NULL COMMENT '同义词',
+  `antonym` VARCHAR(50) DEFAULT NULL COMMENT '反义词',
+  `example` VARCHAR(200) DEFAULT NULL COMMENT '例句',
+  PRIMARY KEY (`id`)
+)
+ENGINE = MyISAM
+CHARACTER SET utf8 COLLATE utf8_general_ci
+COMMENT = '单词库';
+
+CREATE TABLE `english`.`exam` (
+  `id` INT NOT NULL COMMENT '序号',
+  `word` VARCHAR(20)  NOT NULL COMMENT '单词',
+  `symbol` VARCHAR(20)  NOT NULL COMMENT '音标',
+  `trans` VARCHAR(40)  NOT NULL COMMENT '翻译',
+  `type` VARCHAR(20)  NOT NULL COMMENT '单词类型',
+  `synonym` VARCHAR(50)  DEFAULT NULL COMMENT '同义词',
+  `antonym` VARCHAR(50) DEFAULT NULL COMMENT '反义词',
+  `example` VARCHAR(200) DEFAULT NULL COMMENT '例句',
+  `score` INT(1) DEFAULT NULL COMMENT '得分',
+  PRIMARY KEY (`id`)
+)
+ENGINE = MyISAM
+CHARACTER SET utf8 COLLATE utf8_general_ci
+COMMENT = '考试库';
+
+
+

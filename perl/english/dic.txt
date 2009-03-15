@@ -1,0 +1,15 @@
+#1
+|abroad|在海外|adv|He lived abroad for many years; he knows several foreign languages.|overseas|null| 
+|affect|影响|v|The small amount of rain last year affected the growth of crops.|null|null| 
+|effect|结果|n|Some ancient laws are still in effect.|null|null| 
+|attend|上(学);参加|v|All children over seven must attend school.|null|null| 
+|blame|责难|n|I have done my best, neither praise nor blame can affect me now.|null|compliment| 
+|attendance|出席;出勤;维护|n|He didn't have perfect attendance this year.|null|null| 
+|compliment|称赞, 恭维, 敬意|n|She gave a coy smile when he paid her a compliment.|null|null| 
+|bubble|气泡|n|Children like to make bubbles with soap and water/|null|null| 
+|cemetery|墓地|n|There are many tombs in the cemetery.|graveyard|null| 
+|commendation|赞扬|n|He was given a commendation for bravery after he saved the little children from the file.|praise|blame| 
+|conflict|冲突;争斗|n|Some people think that there is a great deal of conflict between religion and science|fight|reconciliation| 
+|cooperate|合作|v|The children cooperated with their teachers in keeping their classrooms clean.|null|null| 
+|curious|好奇的|adj|I am curious to know what my teacher said to my monther.|inquisitive|null| 
+|inquisitive|好问的, 想知道的, 好追根究底的|adj|Some people are very inquisitive|curious|null|
