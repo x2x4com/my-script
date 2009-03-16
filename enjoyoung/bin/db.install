@@ -8,7 +8,12 @@ else
 	exit 255
 fi
 
+
 rpm_pre='MySQL-'
+##get hardware platform
+hp=`uname -i`
+## get os version
+os=`perl -e 'open F, "/etc/redhat-release";chomp ($name=<F>);print $2 if ($name =~ /^[a-zA-Z]+\s*([a-zA-Z]+\s*)*(\d)(\.\d)*\s*\(\w+\)$/);'`
 
 echo "Welcome to DB install step"
 sleep 1
@@ -31,31 +36,79 @@ then
 	exit 255
 fi
 
-if [ `ls -l ${soft_dir}/${rpm_pre}* | wc -l` -ne 4 ]
+if [ -z $os ]
 then
-	echo "Miss ${soft_dir}/${rpm_pre}* at $soft_dir, need 4 package: server,shared,devel,client"
+	echo "Can not identify your os version"
+	exit 1
+fi
+
+if [ -z $hp ]
+then
+	echo "Can not identify your hardware platform"
+	exit 1
+fi
+
+##change to install dir
+dir_from=`pwd`
+cd $soft_dir
+cd ..
+install_base=`pwd`
+## cd source
+cd source/mysql
+if [ $os -eq 5 ]
+then
+	cd 5
+else if [ $os -eq 4 ]
+then 
+	cd 4
+else
+	cd $dir_from
+	echo "Only support RHEL4/5|CentOS4/5,Your os version is $os"
+	exit 1
+fi
+fi
+
+if [ $hp == 'i386' ]
+then
+	cd 32bit	
+else if [ $hp == 'x86_64' ]
+then
+	cd 64bit
+else
+	cd $dir_from
+	echo "Only support i386/x86_64, Your os version is $hp"
+	exit 1
+fi
+fi
+my_install=`pwd`
+########
+
+
+if [ `ls -l ${rpm_pre}* | wc -l` -ne 4 ]
+then
+	echo "Miss ${rpm_pre}* at $my_install, need 4 package: server,shared,devel,client"
 fi
 
 echo "Check system mysql package"
 sys_mysql=0
-sys_mysql=`rpm -qa | grep -e "mysql-[server|devel]" -c`
+sys_mysql=`rpm -qa | grep -e '^[Mm]y[SsQqLl]' | grep -e '[sd]e[rv][ve][el]r*' -c`
 inst_mysql=1
 if [ $sys_mysql -eq 2 ]
 then
 	inst_mysql=0
 fi
 
-if [ $inst_mysql -eq 1 ] && [ `cat ${soft_dir}/../.db.stats` -eq 0 ]
+if [ $inst_mysql -eq 1 ] && [ `cat ${install_base}/.db.stats` -eq 0 ]
 then
-	rpm -ivh ${soft_dir}/${rpm_pre}*.rpm
+	rpm -Uvh ${rpm_pre}*.rpm
 	if [ $? -eq 0 ]
 	then
-		echo 1 > "${soft_dir}/../.db.stats"	
+		echo 1 > "${install_base}/.db.stats"	
 	fi
 else
 	echo "You have installed MySQL Server
 if you want to reinstall, please uninstall first
-system rpm: rpm -e
+system rpm: rpm -e mysql_rpm_package
 my script install: vi #your_install_dir/.db.stats and set 1 to 0"
 	exit 0
 fi
