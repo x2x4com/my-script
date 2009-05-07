@@ -13,7 +13,7 @@ $| = 1;
 my $db_name="english";
 my $location="localhost";
 my $port_num="3306";
-my $db="DBI:mysql:$db_name:$location:$port_num".";mysql_socket=/var/run/mysqld/mysqld.sock";
+my $db="DBI:mysql:$db_name:$location:$port_num;mysql_socket=/var/run/mysqld/mysqld.sock";
 my $db_user="root";
 my $db_passwd="root";
 

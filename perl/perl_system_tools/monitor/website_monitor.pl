@@ -1,20 +1,5 @@
 #!/usr/bin/perl
 
-#**********************************************************
-#
-# Script Name:   website_monitor.pl
-# Script Author: jacky.xu@serversupport.cn
-# Created Date:  2008-8-25
-# Function desc: momitor livebytouch and paybyfinger website
-#
-# Script Usage: nohup fulldir/website_monitor.pl &
-#
-# Script Needs: sendmail.pl
-#
-# 
-#**********************************************************
-
-
 use strict;
 use File::Basename;
 use POSIX qw/strftime/;
@@ -24,8 +9,9 @@ use IO::Socket::INET;
 my $scriptbase = basename $0;
 my (@services,$myproto,$myurl,$myip,$myport,$socket,$mylogopen,@socket_answer,$timenow,$website_status,$socket_test,$mykeys,$findkeys,%mytarget_website);
 
-@services = ( '192.168.10.4/:80:x6868',
-		'192.168.10.5/:80:x9898');
+@services = ( '192.168.10.4/paybyfinger_request.jsp:80:success',
+		'192.168.10.5/livebytouch_request.jsp:80:success');
+
 %mytarget_website = ( paybyfinger => "192.168.10.4",
                         livebytouch => "192.168.10.5");
 
@@ -42,9 +28,7 @@ my $mail = { server => 'mail.livebytouch.com',
 
 my $sleep_time = '30';
 my $time_out = '30';
-my $mylogdir = "../log";
-
-#my $time_format = sub { my $time_now = POSIX::strftime("\[%Y-%m-%d %H:%M:%S\]", localtime(time));return $time_now;};
+my $mylogdir = "./log";
 
 if ( ! -d $mylogdir ){
   print "[Warn] $mylogdir not find, auto create it\n";
@@ -105,11 +89,24 @@ sub website_restart {
 		#print "$mytarget_website{$_}\n";
 		if ( $myip eq $mytarget_website{$_} ){
 			$mail->{subject} = "\[Warn\] $_ is dead";
-			$mail->{message} = "\[$timenow\] $_ is die, restart it now";
+			$mail->{message} = "\[$timenow\] $_ is die, restart it now<br>";
 			print "$mail->{message}\n";
-			system "/data/tomcat/tomcat.sh","$_","stop";
+			my @runstats = `/data/tomcat/tomcat.sh $_ stop`;
+			$mail->{message} .= "$_ STOP action status:<br>";
+			foreach my $tmp (@runstats) {
+				chomp $tmp;
+				$mail->{message} .= $tmp . '<br>' ;
+			}
+			undef @runstats;
 			sleep (10);
-			system "/data/tomcat/tomcat.sh","$_","start";
+			my @runstats = `/data/tomcat/tomcat.sh $_ start`;
+			$mail->{message} .= "$_ START action status:<br>";
+            foreach my $tmp (@runstats) {
+                chomp $tmp;
+                $mail->{message} .= $tmp . '<br>' ;
+            }
+			undef @runstats;
+			$mail->{message} .= "Any restart details please check /data/tomcat/restart.log";
 			&send_mail;
 			last;
 		}
@@ -120,7 +117,7 @@ sub website_restart {
 sub send_mail {
 	my $my_script_dir = dirname $0;
 	if ( -r "$my_script_dir/sendmail.pl" && -x "$my_script_dir/sendmail.pl" ){
-	system "$my_script_dir/sendmail.pl","server:$mail->{server}","user:$mail->{user}","pass:$mail->{pass}","to:$mail->{to}","cc:$mail->{cc}","from:$mail->{from}","sub:$mail->{subject}","message:$mail->{message}";
+	system "$my_script_dir/sendmail.pl","server:$mail->{server}","user:$mail->{user}","pass:$mail->{pass}","to:$mail->{to}","from:$mail->{from}","cc:$mail->{cc}","sub:$mail->{subject}","message:$mail->{message}";
 	}
 }
 

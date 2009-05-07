@@ -13,7 +13,6 @@ rpm_pre='MySQL-'
 ##get hardware platform
 hp=`uname -i`
 ## get os version
-os=`perl -e 'open F, "/etc/redhat-release";chomp ($name=<F>);print $2 if ($name =~ /^[a-zA-Z]+\s*([a-zA-Z]+\s*)*(\d)(\.\d)*\s*\(\w+\)$/);'`
 
 echo "Welcome to DB install step"
 sleep 1
@@ -23,6 +22,8 @@ then
 	echo "Sorry, this script only support RH-Base system"
 	exit 0
 fi
+
+os=`perl -e 'open F, "/etc/redhat-release";chomp ($name=<F>);print $2 if ($name =~ /^[a-zA-Z]+\s*([a-zA-Z]+\s*)*(\d)(\.\d)*\s*\(\w+\)$/);'`
 
 if [ $UID -ne 0 ]
 then

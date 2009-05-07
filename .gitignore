@@ -2,3 +2,6 @@ enjoyoung/source/*
 bash/qmail_old.tar.gz
 bash/qmail_new/source/*
 perl/perl_system_tools/log_filter/Example_data/*
+perl/workshop/mongrel_log/production.log_20090505_1330.tar.gz
+perl/workshop/mongrel_log/archive/*
+perl/workshop/mongrel_log/report//*
